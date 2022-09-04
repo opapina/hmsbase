@@ -14,12 +14,12 @@ import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, ParserConfigurationException, TransformerException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(new File("hmsbase-result.xml"));
+        Document document = builder.parse(new File("hmsbase.xml"));
         String element = reader.readLine();
         NodeList matchedElementsList = document.getElementsByTagName(element);
 
