@@ -5,13 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.solvd</groupId>
-    <artifactId>hms-base</artifactId>
+    <artifactId>hmsbase</artifactId>
     <version>12.0.1-SNAPSHOT</version>
 
     <properties>
         <apache-logger-version>2.18.0</apache-logger-version>
         <apache-commons-lang3-version>3.12.0</apache-commons-lang3-version>
         <apache-commons-io-version>2.11.0</apache-commons-io-version>
+        <dom-version>2.3.0-jaxb-1.0.6</dom-version>
     </properties>
 
     <dependencies>
@@ -34,6 +35,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${apache-commons-io-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.w3c</groupId>
+            <artifactId>dom</artifactId>
+            <version>${dom-version}</version>
         </dependency>
     </dependencies>
 

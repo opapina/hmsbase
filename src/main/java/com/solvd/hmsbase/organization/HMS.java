@@ -25,9 +25,7 @@ public class HMS extends Organization {
 
     public HMS(String name, Integer number, Address address, List<Address> addresses, List<Service> services) {
         super(name, number, address);
-        if (addresses.size() == 0) {
-            throw new InvalidListException("The list is empty");
-        } else this.addresses = addresses;
+        this.addresses = addresses;
         this.services = services;
     }
     public List<Address> getAddresses() {

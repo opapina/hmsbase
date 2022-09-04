@@ -19,17 +19,10 @@ public class Worker extends Human {
     private Vehicle[] vehicles;
     private Child[] children;
 
-    public Worker(String firstName, String lastName, LocalDate dob, String profession, Integer experience) throws ExperienceInvalidException {
+    public Worker(String firstName, String lastName, LocalDate dob, String profession, Integer experience) {
         super(firstName, lastName, dob);
         this.profession = profession;
         this.experience = experience;
-        if (experience == 0) {
-            throw new ExperienceInvalidException("Experience should be 1 or more years");
-        }
-        int age = LocalDate.now().getYear() - dob.getYear();
-        if (age < 18) {
-            throw new ExperienceInvalidException("Age less 18,change the year");
-        }
     }
 
     public String getProfession() {
@@ -44,10 +37,7 @@ public class Worker extends Human {
         return experience;
     }
 
-    public void setExperience(Integer experience) throws ExperienceInvalidException {
-        if (experience == 0) {
-            throw new ExperienceInvalidException("Experience should be 1 or more years");
-        }
+    public void setExperience(Integer experience) {
         this.experience = experience;
     }
 
@@ -82,5 +72,4 @@ public class Worker extends Human {
     public void setChildren(Child[] children) {
         this.children = children;
     }
-
 }

@@ -32,9 +32,6 @@ public class Vehicle {
     }
 
     public void setWheelsCount(Integer wheelsCount) {
-        if (wheelsCount == 0) {
-            throw new InvalidCountWheelException("Vehicle should have wheels! Input number from 1 to 4:");
-        }
         this.wheelsCount = wheelsCount;
     }
 }
