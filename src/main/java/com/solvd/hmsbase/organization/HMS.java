@@ -2,13 +2,12 @@ package com.solvd.hmsbase.organization;
 
 import com.solvd.hmsbase.base.Address;
 import com.solvd.hmsbase.client.Client;
-import com.solvd.hmsbase.exception.InvalidListException;
 import com.solvd.hmsbase.order.Order;
 import com.solvd.hmsbase.vehicle.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.solvd.hmsbase.resources.Equipment;
-import com.solvd.hmsbase.resources.Worker;
+import com.solvd.hmsbase.resource.Equipment;
+import com.solvd.hmsbase.resource.Worker;
 import com.solvd.hmsbase.service.Service;
 
 import java.util.List;

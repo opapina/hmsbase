@@ -70,6 +70,6 @@ public class RenovationOfPremises extends Service {
     }
 
     public String getTypeService() {
-        return type;
+        return name;
     }
 }

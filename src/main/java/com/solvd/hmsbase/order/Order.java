@@ -1,9 +1,8 @@
 package com.solvd.hmsbase.order;
 
 import com.solvd.hmsbase.base.Address;
-import com.solvd.hmsbase.resources.Equipment;
-import com.solvd.hmsbase.resources.Worker;
-import com.solvd.hmsbase.service.Service;
+import com.solvd.hmsbase.resource.Equipment;
+import com.solvd.hmsbase.resource.Worker;
 
 import java.util.List;
 
@@ -12,7 +11,7 @@ public class Order<E extends Equipment> {
     private Integer id;
     private String serviceName;
     private Address address;
-    private Service service;
+
     private Worker worker;
 
     private List<E> equipments;
@@ -50,14 +49,6 @@ public class Order<E extends Equipment> {
 
     public String getStreet() {
         return address.getStreet();
-    }
-
-    public Service getService() {
-        return service;
-    }
-
-    public void setService(Service service) {
-        this.service = service;
     }
 
     public Worker getWorker() {

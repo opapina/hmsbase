@@ -2,20 +2,20 @@ package com.solvd.hmsbase.service;
 
 public class Service {
 
-    public String type;
+    public String name;
     public String place;
 
-    public Service(String type, String place) {
-        this.type = type;
+    public Service(String name, String place) {
+        this.name = name;
         this.place = place;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPlace() {

@@ -38,6 +38,6 @@ public class RepairInOutLetPipes extends Service {
     }
 
     public String getTypeService() {
-        return this.type;
+        return this.name;
     }
 }

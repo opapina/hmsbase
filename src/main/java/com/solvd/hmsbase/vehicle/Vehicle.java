@@ -1,7 +1,5 @@
 package com.solvd.hmsbase.vehicle;
 
-import com.solvd.hmsbase.exception.InvalidCountWheelException;
-
 public class Vehicle {
 
     private String model;

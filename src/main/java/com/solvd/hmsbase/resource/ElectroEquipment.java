@@ -1,4 +1,4 @@
-package com.solvd.hmsbase.resources;
+package com.solvd.hmsbase.resource;
 
 import java.math.BigDecimal;
 

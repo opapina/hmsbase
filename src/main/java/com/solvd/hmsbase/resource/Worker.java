@@ -1,7 +1,6 @@
-package com.solvd.hmsbase.resources;
+package com.solvd.hmsbase.resource;
 
 import com.solvd.hmsbase.base.*;
-import com.solvd.hmsbase.exception.ExperienceInvalidException;
 import com.solvd.hmsbase.vehicle.Vehicle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

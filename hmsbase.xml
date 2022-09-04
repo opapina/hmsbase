@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<organization>
+    <hms>
+        <name>PartizanskiHMS</name>
+        <number>34</number>
+        <address>
+            <street>Rumyanceva</street>
+            <house>12</house>
+        </address>
+        <addresses>
+            <streets>
+                <street>Pervomaiskay</street>
+                <street>Zaharova</street>
+                <street>Pulihova</street>
+            </streets>
+        </addresses>
+        <services>
+            <service name="cleaning" place="street">
+                <type>dry</type>
+                <surfaceDirection>1</surfaceDirection>
+                <squaremeters>50.77</squaremeters>
+                <datetime>09.03.2022 11:30</datetime>
+            </service>
+            <service name="cleaning" place="apartment">
+                <type>wet</type>
+                <surfaceDirection>2</surfaceDirection>
+                <squaremeters>30</squaremeters>
+            </service>
+            <service name="garbage removal" place="street">
+                <type>Plastic</type>
+                <quantity>30.99</quantity>
+                <date>08.08.2022</date>
+            </service>
+            <service name="garbage removal" place="house">
+                <type>Food waster</type>
+                <quantity>10.23</quantity>
+            </service>
+            <service name="renovation of premises" place="apartment">
+                <datetime>15.10.2022</datetime>
+                <hieght>2.8</hieght>
+                <width>20.1</width>
+                <square>55.37</square>
+                <windowsquantity>3</windowsquantity>
+                <doorsquantity>2</doorsquantity>
+            </service>
+            <service name="renovation of premises" place="house">
+                <datetime>27.10.2022</datetime>
+                <hieght>10</hieght>
+                <width>70</width>
+                <square>250.68</square>
+                <windowsquantity>50</windowsquantity>
+                <doorsquantity>10</doorsquantity>
+            </service>
+            <service name="repair in/outlet pipes" place="house">
+                <material>steel</material>
+                <long>120.56</long>
+                <diametr>2.54</diametr>
+            </service>
+            <service name="repair in/outlet pipes" place="apartment">
+                <material>plastic</material>
+                <long>10.20</long>
+                <diametr>3.15</diametr>
+            </service>
+            <service name="repair in/outlet wires" place="street">
+                <long>100.50</long>
+            </service>
+            <service name="repair in/outlet wires" place="apartment">
+                <long>19.99</long>
+            </service>
+        </services>
+        <orders>
+            <order id="1">
+                <servicename>cleaning</servicename>
+                <address>
+                    <street>Zaharova</street>
+                    <house>23</house>
+                    <flat>15</flat>
+                </address>
+                <equipment>
+                    <name>mop</name>
+                    <servicetype>cleaning</servicetype>
+                    <price>19.50</price>
+                </equipment>
+            </order>
+            <order id="2">
+                <servicename>repair in/outlet pipes</servicename>
+                <address>
+                    <street>Zaharova</street>
+                    <house>23</house>
+                    <flat>15</flat>
+                </address>
+                <electroequipment>
+                    <name>pipe soldering iron</name>
+                    <servicetype>repair</servicetype>
+                    <price>230.68</price>
+                </electroequipment>
+            </order>
+            <order id="3">
+                <servicename>garbage removal</servicename>
+                <address>
+                    <street>Frunze</street>
+                    <house>5</house>
+                </address>
+            </order>
+        </orders>
+        <clients>
+            <client>
+                <firstname>Vasya</firstname>
+                <lastname>Ivanov</lastname>
+                <dob>01.01.1988</dob>
+                <apartments>
+                    <apartment>
+                        <room>2</room>
+                        <square>60.54</square>
+                        <address>
+                            <street>Frunze</street>
+                            <house>50</house>
+                            <flat>30</flat>
+                        </address>
+                    </apartment>
+                    <apartment>
+                        <room>1</room>
+                        <square>40.10</square>
+                        <address>
+                            <street>Kozlova</street>
+                            <house>20</house>
+                            <flat>77</flat>
+                        </address>
+                    </apartment>
+                </apartments>
+            </client>
+            <client>
+                <firstname>Yulya</firstname>
+                <lastname>Znanina</lastname>
+                <dob>06.08.1995</dob>
+                <apartments>
+                    <apartment>
+                        <room>3</room>
+                        <square>88.25</square>
+                        <address>
+                            <street>Platonava</street>
+                            <house>1</house>
+                            <flat>38</flat>
+                        </address>
+                    </apartment>
+                </apartments>
+                <vehicles>
+                    <vehicle type="car">
+                        <model>Polo</model>
+                        <brand>Volkswagen</brand>
+                    </vehicle>
+                    <vehicle type="bicycle">
+                        <model>adult-17</model>
+                        <brand>Aist</brand>
+                    </vehicle>
+                </vehicles>
+            </client>
+            <client>
+                <firstname>Lubov</firstname>
+                <lastname>Petrova</lastname>
+                <dob>01.09.1990</dob>
+                <apartments>
+                    <apartment>
+                        <room>1</room>
+                        <square>50.30</square>
+                        <address>
+                            <street>Azgura</street>
+                            <house>51</house>
+                            <flat>90</flat>
+                        </address>
+                    </apartment>
+                </apartments>
+                <children>
+                    <child>
+                        <firstname>Ivan</firstname>
+                        <lastname>Petrov</lastname>
+                        <dob>09.02.2013</dob>
+                    </child>
+                    <child>
+                        <firstname>Vova</firstname>
+                        <lastname>Petrov</lastname>
+                        <dob>21.06.2016</dob>
+                    </child>
+                </children>
+            </client>
+        </clients>
+        <workers>
+            <worker>
+                <firstname>Kolya</firstname>
+                <lastname>Titov</lastname>
+                <dob>12.10.1993</dob>
+                <profession>piper</profession>
+                <experience>8</experience>
+            </worker>
+            <worker>
+                <firstname>Ivan</firstname>
+                <lastname>Kotov</lastname>
+                <dob>27.01.2001</dob>
+                <profession>welder</profession>
+                <experience>2</experience>
+                <salary>1597.25</salary>
+                <address>
+                    <street>Chapaeva</street>
+                    <house>21</house>
+                    <flat>4</flat>
+                </address>
+                <vehicles>
+                    <vehicle type="car">
+                        <model>3</model>
+                        <brand>bmw</brand>
+                    </vehicle>
+                    <vehicle type="bicycle">
+                        <model>adult-25</model>
+                        <brand>Fitness</brand>
+                    </vehicle>
+                </vehicles>
+            </worker>
+            <worker>
+                <firstname>Kolya</firstname>
+                <lastname>Titov</lastname>
+                <dob>15.03.1980</dob>
+                <profession>piper</profession>
+                <experience>8</experience>
+            </worker>
+            <worker>
+                <firstname>Katya</firstname>
+                <lastname>Mashkina</lastname>
+                <dob>31.12.1997</dob>
+                <profession>cleaner</profession>
+                <experience>5</experience>
+                <children>
+                    <child>
+                        <firstname>Kolya</firstname>
+                        <lastname>Mashkin</lastname>
+                        <dob>20.05.2014</dob>
+                        <age>8</age>
+                    </child>
+                    <child>
+                        <firstname>Nadya</firstname>
+                        <lastname>Mashkina</lastname>
+                        <dob>01.05.2008</dob>
+                    </child>
+                    <child>
+                        <firstname>Ira</firstname>
+                        <lastname>Mashkina</lastname>
+                        <dob>27.10.2011</dob>
+                    </child>
+                </children>
+            </worker>
+        </workers>
+    </hms>
+</organization>

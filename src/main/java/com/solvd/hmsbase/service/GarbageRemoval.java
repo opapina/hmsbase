@@ -50,35 +50,7 @@ public class GarbageRemoval extends Service {
         this.garbageType = garbageType;
     }
 
-    public void sort(String garbageType) {
-        if (garbageType == "Plastic") {
-            setPlace("Plastic container");
-        } else if (garbageType == "Glass") {
-            setPlace("Glass container");
-        } else if (garbageType == "Paper") {
-            setPlace("Paper container");
-        } else {
-            setPlace("Common container");
-        }
-    }
-
-    public void sort(String place, String garbageType) {
-        if (garbageType == "Plastic") {
-            setPlace("Plastic container");
-            System.out.println("This is the Plastic container");
-        } else if (garbageType == "Glass") {
-            setPlace("Glass container");
-            System.out.println("This is the Glass container");
-        } else if (garbageType == "Paper") {
-            setPlace("Paper container");
-            System.out.println("This is the Paper container");
-        } else {
-            setPlace("Common container");
-            System.out.println("This is the Common container");
-        }
-    }
-
     public String getTypeService() {
-        return this.type;
+        return this.name;
     }
 }

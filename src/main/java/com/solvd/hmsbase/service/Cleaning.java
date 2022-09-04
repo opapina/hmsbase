@@ -76,6 +76,6 @@ public class Cleaning extends Service {
     }
 
     public String getTypeService() {
-        return this.type;
+        return this.name;
     }
 }
