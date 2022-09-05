@@ -7,12 +7,12 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element type="xs:string" name="name"/>
-              <xs:element type="xs:byte" name="number"/>
+              <xs:element type="xs:unsignedInt" name="number"/>
               <xs:element name="address">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element type="xs:string" name="street"/>
-                    <xs:element type="xs:byte" name="house"/>
+                    <xs:element type="xs:unsignedInt" name="house"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -71,8 +71,14 @@
                           </xs:element>
                           <xs:element name="datetime" minOccurs="0">
                             <xs:simpleType>
-                              <xs:restriction base="xs:string">
+                              <xs:restriction base="xs:dateTime">
                                 <xs:enumeration value="09.03.2022 11:30"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="date" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:date">
                                 <xs:enumeration value="15.10.2022"/>
                                 <xs:enumeration value="27.10.2022"/>
                               </xs:restriction>
@@ -86,7 +92,6 @@
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element type="xs:string" name="date" minOccurs="0"/>
                           <xs:element name="hieght" minOccurs="0">
                             <xs:simpleType>
                               <xs:restriction base="xs:float">
@@ -250,7 +255,7 @@
                           </xs:element>
                           <xs:element name="dob">
                             <xs:simpleType>
-                              <xs:restriction base="xs:string">
+                              <xs:restriction base="xs:date">
                                 <xs:enumeration value="01.01.1988"/>
                                 <xs:enumeration value="06.08.1995"/>
                                 <xs:enumeration value="01.09.1990"/>
@@ -370,7 +375,7 @@
                                       <xs:element type="xs:string" name="lastname"/>
                                       <xs:element name="dob">
                                         <xs:simpleType>
-                                          <xs:restriction base="xs:string">
+                                          <xs:restriction base="xs:date">
                                             <xs:enumeration value="09.02.2013"/>
                                             <xs:enumeration value="21.06.2016"/>
                                           </xs:restriction>
@@ -414,7 +419,7 @@
                           </xs:element>
                           <xs:element name="dob">
                             <xs:simpleType>
-                              <xs:restriction base="xs:string">
+                              <xs:restriction base="xs:date">
                                 <xs:enumeration value="12.10.1993"/>
                                 <xs:enumeration value="27.01.2001"/>
                                 <xs:enumeration value="15.03.1980"/>
