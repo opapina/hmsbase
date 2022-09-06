@@ -19,7 +19,7 @@
                 <type>dry</type>
                 <surfaceDirection>1</surfaceDirection>
                 <squaremeters>50.77</squaremeters>
-                <datetime>09.03.2022 11:30</datetime>
+                <datetime>2022-09-03T11:30:00</datetime>
             </service>
             <service name="cleaning" place="apartment">
                 <type>wet</type>
@@ -29,14 +29,14 @@
             <service name="garbage removal" place="street">
                 <type>Plastic</type>
                 <quantity>30.99</quantity>
-                <date>08.08.2022</date>
+                <date>2022-08-08</date>
             </service>
             <service name="garbage removal" place="house">
                 <type>Food waster</type>
                 <quantity>10.23</quantity>
             </service>
             <service name="renovation of premises" place="apartment">
-                <datetime>15.10.2022</datetime>
+                <date>2022-10-10</date>
                 <hieght>2.8</hieght>
                 <width>20.1</width>
                 <square>55.37</square>
@@ -44,7 +44,7 @@
                 <doorsquantity>2</doorsquantity>
             </service>
             <service name="renovation of premises" place="house">
-                <datetime>27.10.2022</datetime>
+                <date>2022-10-12</date>
                 <hieght>10</hieght>
                 <width>70</width>
                 <square>250.68</square>
@@ -107,7 +107,7 @@
             <client>
                 <firstname>Vasya</firstname>
                 <lastname>Ivanov</lastname>
-                <dob>01.01.1988</dob>
+                <dob>1988-01-01</dob>
                 <apartments>
                     <apartment>
                         <room>2</room>
@@ -132,7 +132,7 @@
             <client>
                 <firstname>Yulya</firstname>
                 <lastname>Znanina</lastname>
-                <dob>06.08.1995</dob>
+                <dob>1995-06-08</dob>
                 <apartments>
                     <apartment>
                         <room>3</room>
@@ -158,7 +158,7 @@
             <client>
                 <firstname>Lubov</firstname>
                 <lastname>Petrova</lastname>
-                <dob>01.09.1990</dob>
+                <dob>1990-01-09</dob>
                 <apartments>
                     <apartment>
                         <room>1</room>
@@ -174,12 +174,12 @@
                     <child>
                         <firstname>Ivan</firstname>
                         <lastname>Petrov</lastname>
-                        <dob>09.02.2013</dob>
+                        <dob>2013-09-02</dob>
                     </child>
                     <child>
                         <firstname>Vova</firstname>
                         <lastname>Petrov</lastname>
-                        <dob>21.06.2016</dob>
+                        <dob>2016-06-21</dob>
                     </child>
                 </children>
             </client>
@@ -188,14 +188,14 @@
             <worker>
                 <firstname>Kolya</firstname>
                 <lastname>Titov</lastname>
-                <dob>12.10.1993</dob>
+                <dob>1993-12-10</dob>
                 <profession>piper</profession>
                 <experience>8</experience>
             </worker>
             <worker>
                 <firstname>Ivan</firstname>
                 <lastname>Kotov</lastname>
-                <dob>27.01.2001</dob>
+                <dob>2001-01-27</dob>
                 <profession>welder</profession>
                 <experience>2</experience>
                 <salary>1597.25</salary>
@@ -218,32 +218,32 @@
             <worker>
                 <firstname>Kolya</firstname>
                 <lastname>Titov</lastname>
-                <dob>15.03.1980</dob>
+                <dob>1980-03-15</dob>
                 <profession>piper</profession>
                 <experience>8</experience>
             </worker>
             <worker>
                 <firstname>Katya</firstname>
                 <lastname>Mashkina</lastname>
-                <dob>31.12.1997</dob>
+                <dob>1997-31-12</dob>
                 <profession>cleaner</profession>
                 <experience>5</experience>
                 <children>
                     <child>
                         <firstname>Kolya</firstname>
                         <lastname>Mashkin</lastname>
-                        <dob>20.05.2014</dob>
+                        <dob>2014-05-25</dob>
                         <age>8</age>
                     </child>
                     <child>
                         <firstname>Nadya</firstname>
                         <lastname>Mashkina</lastname>
-                        <dob>01.05.2008</dob>
+                        <dob>2008-01-05</dob>
                     </child>
                     <child>
                         <firstname>Ira</firstname>
                         <lastname>Mashkina</lastname>
-                        <dob>27.10.2011</dob>
+                        <dob>2011-10-27</dob>
                     </child>
                 </children>
             </worker>
