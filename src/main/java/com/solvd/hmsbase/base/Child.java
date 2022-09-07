@@ -17,5 +17,4 @@ public class Child extends Human {
     public void setInfantAge(Integer infantAge) {
         this.infantAge = infantAge;
     }
-
 }

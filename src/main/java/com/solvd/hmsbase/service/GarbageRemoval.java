@@ -5,25 +5,16 @@ import java.time.LocalDate;
 
 public class GarbageRemoval extends Service {
 
-    public static int countRemoval;
+
     private String garbageType;
     private BigDecimal quantity;
     private LocalDate dateRemoval;
 
-    public GarbageRemoval(String type, String place, String garbageType, BigDecimal quantity) {
-        super(type, place);
-        this.garbageType = garbageType;
-        this.quantity = quantity;
-        this.dateRemoval = LocalDate.now();
-        countRemoval++;
-    }
-
-    public GarbageRemoval(String type, String place, String garbageType, BigDecimal quantity, LocalDate dateRemoval) {
-        super(type, place);
+    public GarbageRemoval(String name, String place, String garbageType, BigDecimal quantity, LocalDate dateRemoval) {
+        super(name, place);
         this.quantity = quantity;
         this.dateRemoval = dateRemoval;
         this.garbageType = garbageType;
-        countRemoval++;
     }
 
     public BigDecimal getQuantity() {
