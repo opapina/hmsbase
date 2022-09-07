@@ -1,12 +1,10 @@
 package com.solvd.hmsbase.base;
 
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 
 public interface IParse {
 
-    void parse() throws ParserConfigurationException, IOException, SAXException;
+    void parse() throws IOException;
     
 }
