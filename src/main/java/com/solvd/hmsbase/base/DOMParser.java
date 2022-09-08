@@ -21,50 +21,73 @@ public class DOMParser implements IParse {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(new File("hmsbase.xml"));
 
-//            String element = reader.readLine();
-//            NodeList matchedElementsList = document.getElementsByTagName(element);
             Node root = document.getDocumentElement();
             NodeList hmss = root.getChildNodes();
             for (int i = 0; i < hmss.getLength(); i++) {
                 Node hms = hmss.item(i);
+                if (hms.getNodeType() == Node.TEXT_NODE) {
+                    String textInformation = hms.getNodeValue().replace("\n", "").trim();
+                    if (!textInformation.isEmpty()) {
+                        System.out.println("Into element was found text: " + hms.getNodeValue());
+                    }
+                } else {
+                    System.out.println("element: " + hms.getNodeName());
+                }
                 if (hms.getNodeType() != Node.TEXT_NODE) {
-                    NodeList hmsfeilds = hms.getChildNodes();
-                    for(int j = 0; j < hmsfeilds.getLength(); j++) {
-                        Node hmsfeild = hmsfeilds.item(j);
-                        if (hmsfeild.getNodeType() != Node.TEXT_NODE) {
-                            System.out.println(hmsfeild.getNodeName() + ":" + hmsfeild.getChildNodes().item(0).getTextContent());
+                    NodeList hmsFields = hms.getChildNodes();
+                    for (int j = 0; j < hmsFields.getLength(); j++) {
+                        Node hmsField = hmsFields.item(j);
+                        if (hmsField.getNodeType() != Node.TEXT_NODE) {
+                            System.out.println("\n" + hmsField.getNodeName() + ": " + hmsField.getChildNodes().item(0).getTextContent());
+                            if (hmsField.hasChildNodes()) {
+                                NodeList fieldsElements = hmsField.getChildNodes();
+                                for (int n = 0; n < fieldsElements.getLength(); n++) {
+                                    Node fieldsElement = hmsField.getChildNodes().item(n);
+                                    if (!(fieldsElement == null)) {
+                                        if (fieldsElement.getNodeType() != Node.TEXT_NODE) {
+                                            System.out.println(fieldsElement.getNodeName() + ": " + fieldsElement.getChildNodes().item(0).getTextContent());
+                                        }
+                                        if (fieldsElement.hasChildNodes()) {
+                                            NodeList fieldsChildElements = fieldsElement.getChildNodes();
+                                            for (int k = 0; k < fieldsChildElements.getLength(); k++) {
+                                                Node fieldsChildElement = fieldsElement.getChildNodes().item(k);
+                                                if (!(fieldsChildElement == null)) {
+                                                    if (fieldsChildElement.getNodeType() != Node.TEXT_NODE) {
+                                                        System.out.println(fieldsChildElement.getNodeName() + ": " + fieldsChildElement.getChildNodes().item(0).getTextContent());
+                                                        if (fieldsChildElement.hasChildNodes()) {
+                                                            NodeList fieldsChildChilds = hmsField.getChildNodes();
+                                                            for (int l = 0; l < fieldsChildChilds.getLength(); l++) {
+                                                                Node fieldsChildChild = hmsField.getChildNodes().item(l);
+                                                                if (!(fieldsChildChild == null)) {
+                                                                    if (fieldsChildChild.getNodeType() != Node.TEXT_NODE) {
+                                                                        System.out.println(fieldsChildChild.getNodeName() + ": " + fieldsChildChild.getChildNodes().item(0).getTextContent());
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        NamedNodeMap attrs = fieldsElement.getAttributes();
+                                        if(!(attrs == null)) {
+                                            for (int k = 0; k < attrs.getLength(); k++) {
+                                                System.out.println("Attr name: " + attrs.item(k).getNodeName() + ", attr value: " + attrs.item(k).getNodeValue());
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                            NamedNodeMap attributes = hmsField.getAttributes();
+                            for (int k = 0; k < attributes.getLength(); k++) {
+                                System.out.println("Attr's name: " + attributes.item(k).getNodeName() + ", attr's value: " + attributes.item(k).getNodeValue());
+                            }
                         }
                     }
                     System.out.println("===========>>>>");
                 }
-
-//            if (matchedElementsList.getLength() == 0) {
-//                System.out.println("Tag " + element + " was not found in the file");
-//            } else {
-//                int count = 0;
-//                System.out.println("Element was found! count of element = " + matchedElementsList.getLength());
-//                for (int j = 0; j < matchedElementsList.getLength(); j++) {
-//                    Node foundedElement = matchedElementsList.item(j);
-//                    count++;
-//                    System.out.println(j + 1 + " element " + element);
-//                    if (foundedElement.hasChildNodes()) {
-//                        for (int i = 0; i < foundedElement.getChildNodes().getLength(); i++) {
-//                            Node node = foundedElement.getChildNodes().item(i);
-//                            if (node.getNodeType() == Node.TEXT_NODE) {
-//                                String textInformation = node.getNodeValue().replace("\n", "").trim();
-//                                if (!textInformation.isEmpty()) {
-//                                    System.out.println("Into element was found text: " + node.getNodeValue());
-//                                }
-//                            } else {
-//                                System.out.println("- has attr: " + node.getNodeName());
-//                                NamedNodeMap attributes = node.getAttributes();
-//                                for (int k = 0; k < attributes.getLength(); k++) {
-//                                    System.out.println("Attr name: " + attributes.item(k).getNodeName() + ", attr value: " + attributes.item(k).getNodeValue());
-//                                }
-//                            }
-//                            if (node.hasChildNodes()) node.getChildNodes();
-                        }
-
+            }
         } catch (ParserConfigurationException e) {
             throw new RuntimeException(e);
         } catch (DOMException e) {
