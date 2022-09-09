@@ -1,17 +1,15 @@
 package com.solvd.hmsbase;
 
 import com.solvd.hmsbase.base.DOMParser;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
+import com.solvd.hmsbase.base.IParse;
 
 import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
+    public static void main(String[] args) throws IOException {
 
-        DOMParser dom = new DOMParser();
+        IParse dom = new DOMParser();
         dom.parse();
     }
 }
