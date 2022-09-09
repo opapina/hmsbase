@@ -38,7 +38,8 @@ public class DOMParser implements IParse {
                     for (int j = 0; j < hmsFields.getLength(); j++) {
                         Node hmsField = hmsFields.item(j);
                         if (hmsField.getNodeType() != Node.TEXT_NODE) {
-                            System.out.println("\n" + hmsField.getNodeName() + ": " + hmsField.getChildNodes().item(0).getTextContent());
+                            System.out.println("-----------");
+                            System.out.println(hmsField.getNodeName() + ": " + hmsField.getChildNodes().item(0).getTextContent());
                             if (hmsField.hasChildNodes()) {
                                 NodeList fieldsElements = hmsField.getChildNodes();
                                 for (int n = 0; n < fieldsElements.getLength(); n++) {
@@ -53,46 +54,50 @@ public class DOMParser implements IParse {
                                                 Node fieldsChildElement = fieldsElement.getChildNodes().item(k);
                                                 if (!(fieldsChildElement == null)) {
                                                     if (fieldsChildElement.getNodeType() != Node.TEXT_NODE) {
+                                                        System.out.println("----");
                                                         System.out.println(fieldsChildElement.getNodeName() + ": " + fieldsChildElement.getChildNodes().item(0).getTextContent());
                                                         if (fieldsChildElement.hasChildNodes()) {
-                                                            NodeList fieldsChildChilds = hmsField.getChildNodes();
-                                                            for (int l = 0; l < fieldsChildChilds.getLength(); l++) {
-                                                                Node fieldsChildChild = hmsField.getChildNodes().item(l);
+                                                            NodeList fieldsChildChilds = fieldsChildElement.getChildNodes();
+                                                            for (int l = 0; l < fieldsChildElements.getLength(); l++) {
+                                                                Node fieldsChildChild = fieldsChildElement.getChildNodes().item(l);
                                                                 if (!(fieldsChildChild == null)) {
                                                                     if (fieldsChildChild.getNodeType() != Node.TEXT_NODE) {
-                                                                        System.out.println(fieldsChildChild.getNodeName() + ": " + fieldsChildChild.getChildNodes().item(0).getTextContent());
+                                                                        System.out.println(fieldsChildChild.getNodeName() + " : " + fieldsChildChild.getChildNodes().item(0).getTextContent());
                                                                     }
                                                                 }
                                                             }
                                                         }
+                                                        NamedNodeMap childAttrs = fieldsChildElement.getAttributes();
+                                                        if (null != childAttrs) {
+                                                            for (int m = 0; m < childAttrs.getLength(); m++) {
+                                                                System.out.println("Attr name: " + childAttrs.item(m).getNodeName() + ", attr value: " + childAttrs.item(m).getNodeValue());
+                                                            }
+
+                                                        }
                                                     }
                                                 }
                                             }
-                                        }
-                                        NamedNodeMap attrs = fieldsElement.getAttributes();
-                                        if(!(attrs == null)) {
-                                            for (int k = 0; k < attrs.getLength(); k++) {
-                                                System.out.println("Attr name: " + attrs.item(k).getNodeName() + ", attr value: " + attrs.item(k).getNodeValue());
+                                            NamedNodeMap attrs = fieldsElement.getAttributes();
+                                            if (null != attrs) {
+                                                for (int b = 0; b < attrs.getLength(); b++) {
+                                                    System.out.println("Attr name: " + attrs.item(b).getNodeName() + ", attr value: " + attrs.item(b).getNodeValue());
+                                                }
                                             }
                                         }
-
                                     }
                                 }
-                            }
-                            NamedNodeMap attributes = hmsField.getAttributes();
-                            for (int k = 0; k < attributes.getLength(); k++) {
-                                System.out.println("Attr's name: " + attributes.item(k).getNodeName() + ", attr's value: " + attributes.item(k).getNodeValue());
+                                NamedNodeMap attributes = hmsField.getAttributes();
+                                for (int k = 0; k < attributes.getLength(); k++) {
+                                    System.out.println("Attr's name: " + attributes.item(k).getNodeName() + ", attr's value: " + attributes.item(k).getNodeValue());
+                                }
+
                             }
                         }
                     }
                     System.out.println("===========>>>>");
                 }
             }
-        } catch (ParserConfigurationException e) {
-            throw new RuntimeException(e);
-        } catch (DOMException e) {
-            throw new RuntimeException(e);
-        } catch (SAXException e) {
+        } catch (ParserConfigurationException | DOMException | SAXException e) {
             throw new RuntimeException(e);
         }
     }
