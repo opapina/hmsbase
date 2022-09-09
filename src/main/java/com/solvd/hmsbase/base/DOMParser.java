@@ -26,8 +26,8 @@ public class DOMParser implements IParse {
             for (int i = 0; i < hmss.getLength(); i++) {
                 Node hms = hmss.item(i);
                 if (hms.getNodeType() == Node.TEXT_NODE) {
-                    String textInformation = hms.getNodeValue().replace("\n", "").trim();
-                    if (!textInformation.isEmpty()) {
+                    String textInform = hms.getNodeValue().replace("\n", "").trim();
+                    if (!textInform.isEmpty()) {
                         System.out.println("Into element was found text: " + hms.getNodeValue());
                     }
                 } else {
@@ -97,6 +97,7 @@ public class DOMParser implements IParse {
                     System.out.println("===========>>>>");
                 }
             }
+
         } catch (ParserConfigurationException | DOMException | SAXException e) {
             throw new RuntimeException(e);
         }
