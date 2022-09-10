@@ -19,7 +19,7 @@ public class DOMParser implements IParse {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(new File("hmsbase.xml"));
+            Document document = builder.parse(new File("src/main/resources/hmsbase.xml"));
 
             Node root = document.getDocumentElement();
             NodeList hmss = root.getChildNodes();
@@ -54,7 +54,7 @@ public class DOMParser implements IParse {
                                                 Node fieldsChildElement = fieldsElement.getChildNodes().item(k);
                                                 if (!(fieldsChildElement == null)) {
                                                     if (fieldsChildElement.getNodeType() != Node.TEXT_NODE) {
-                                                        System.out.println("----");
+//                                                        System.out.println("----");
                                                         System.out.println(fieldsChildElement.getNodeName() + ": " + fieldsChildElement.getChildNodes().item(0).getTextContent());
                                                         if (fieldsChildElement.hasChildNodes()) {
                                                             NodeList fieldsChildChilds = fieldsChildElement.getChildNodes();
@@ -90,14 +90,12 @@ public class DOMParser implements IParse {
                                 for (int k = 0; k < attributes.getLength(); k++) {
                                     System.out.println("Attr's name: " + attributes.item(k).getNodeName() + ", attr's value: " + attributes.item(k).getNodeValue());
                                 }
-
                             }
                         }
                     }
                     System.out.println("===========>>>>");
                 }
             }
-
         } catch (ParserConfigurationException | DOMException | SAXException e) {
             throw new RuntimeException(e);
         }

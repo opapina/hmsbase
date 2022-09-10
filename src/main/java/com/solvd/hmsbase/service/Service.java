@@ -1,9 +1,21 @@
 package com.solvd.hmsbase.service;
 
+import javax.xml.bind.annotation.*;
+
+
+@XmlRootElement(name = "service")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Service {
 
+    @XmlElement
+    @XmlAttribute
     public String name;
+    @XmlElement
+    @XmlAttribute
     public String place;
+
+    public Service() {
+    }
 
     public Service(String name, String place) {
         this.name = name;

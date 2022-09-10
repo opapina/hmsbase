@@ -1,11 +1,19 @@
 package com.solvd.hmsbase.vehicle;
 
-public class Vehicle {
+import javax.xml.bind.annotation.*;
 
+@XmlRootElement(name = "vehicle")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Vehicle {
+    @XmlElement
     private String model;
+    @XmlElement
     private String brand;
+
     private Integer wheelsCount;
 
+    public  Vehicle () {
+    }
     public Vehicle(String model, String brand) {
         this.model = model;
         this.brand = brand;

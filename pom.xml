@@ -6,13 +6,15 @@
 
     <groupId>com.solvd</groupId>
     <artifactId>hmsbase</artifactId>
-    <version>12.0.2-SNAPSHOT</version>
+    <version>13.0.1-SNAPSHOT</version>
 
     <properties>
         <apache-logger-version>2.18.0</apache-logger-version>
         <apache-commons-lang3-version>3.12.0</apache-commons-lang3-version>
         <apache-commons-io-version>2.11.0</apache-commons-io-version>
         <dom-version>2.3.0-jaxb-1.0.6</dom-version>
+        <jaxb-api-version>2.3.1</jaxb-api-version>
+        <jaxb-impl-version>2.3.4</jaxb-impl-version>
     </properties>
 
     <dependencies>
@@ -40,6 +42,16 @@
             <groupId>org.w3c</groupId>
             <artifactId>dom</artifactId>
             <version>${dom-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb-impl-version}</version>
         </dependency>
     </dependencies>
 

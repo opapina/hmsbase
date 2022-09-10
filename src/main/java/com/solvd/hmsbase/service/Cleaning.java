@@ -1,13 +1,26 @@
 package com.solvd.hmsbase.service;
 
+import com.solvd.hmsbase.base.DateAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@XmlRootElement(name = "cleaning")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Cleaning extends Service {
 
+    @XmlElement
     private String typeCleaning;
+    @XmlElement
     private BigDecimal squareMeters;
+
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private LocalDateTime dateTimeCleaning;
+
+    public Cleaning () {
+    }
 
     public Cleaning(String name, String place, String typeCleaning, BigDecimal squareMeters, LocalDateTime dateTimeCleaning) {
         super(name, place);

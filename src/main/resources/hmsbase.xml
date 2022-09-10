@@ -7,33 +7,45 @@
         <house>12</house>
     </address>
     <addresses>
-        <streets>
+        <address>
             <street>Pervomaiskay</street>
+        </address>
+        <address>
             <street>Zaharova</street>
+        </address>
+        <address>
             <street>Pulihova</street>
-        </streets>
+        </address>
     </addresses>
     <services>
-        <cleaning name="Cleaning" place="street">
-            <typeCleaning>dry</typeCleaning>
-            <squareMeters>50.77</squareMeters>
-            <dateTimeCleaning>2022-09-03T11:30:00</dateTimeCleaning>
-        </cleaning>
-        <cleaning name="Cleaning" place="apartment">
-            <type>wet</type>
-            <squareMeters>30</squareMeters>
-            <dateTimeCleaning>2022-10-01T13:20:00</dateTimeCleaning>
-        </cleaning>
-        <garbageRemoval name="GarbageRemoval" place="street">
-            <garbageType>Plastic</garbageType>
-            <quantity>30.99</quantity>
-            <dateRemoval>2022-08-08</dateRemoval>
-        </garbageRemoval>
-        <garbageRemoval name="GarbageRemoval" place="house">
-            <garbageType>Food waster</garbageType>
-            <quantity>10.23</quantity>
-            <dateRemoval>2022-09-08</dateRemoval>
-        </garbageRemoval>
+        <service>
+            <cleaning name="Cleaning" place="street">
+                <typeCleaning>dry</typeCleaning>
+                <squareMeters>50.77</squareMeters>
+                <dateTimeCleaning>2022-09-03T11:30:00</dateTimeCleaning>
+            </cleaning>
+        </service>
+        <service>
+            <cleaning name="Cleaning" place="apartment">
+                <type>wet</type>
+                <squareMeters>30</squareMeters>
+                <dateTimeCleaning>2022-10-01T13:20:00</dateTimeCleaning>
+            </cleaning>
+        </service>
+        <service>
+            <garbageRemoval name="GarbageRemoval" place="street">
+                <garbageType>Plastic</garbageType>
+                <quantity>30.99</quantity>
+                <dateRemoval>2022-08-08</dateRemoval>
+            </garbageRemoval>
+        </service>
+        <service>
+            <garbageRemoval name="GarbageRemoval" place="house">
+                <garbageType>Food waster</garbageType>
+                <quantity>10.23</quantity>
+                <dateRemoval>2022-09-08</dateRemoval>
+            </garbageRemoval>
+        </service>
     </services>
     <orders>
         <order>
@@ -168,11 +180,11 @@
             </vehicles>
         </worker>
         <worker>
-            <firstName>Kolya</firstName>
-            <lastName>Titov</lastName>
+            <firstName>Vasya</firstName>
+            <lastName>Zotov</lastName>
             <dob>1980-03-15</dob>
             <profession>piper</profession>
-            <experience>8</experience>
+            <experience>3</experience>
         </worker>
         <worker>
             <firstName>Katya</firstName>

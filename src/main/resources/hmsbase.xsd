@@ -16,10 +16,10 @@
         <xs:element name="addresses">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="streets">
+              <xs:element name="address" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="street" maxOccurs="unbounded" minOccurs="0">
+                    <xs:element name="street">
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
                           <xs:enumeration value="Pervomaiskay"/>
@@ -37,62 +37,68 @@
         <xs:element name="services">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="cleaning" maxOccurs="unbounded" minOccurs="0">
+              <xs:element name="service" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="typeCleaning" minOccurs="0"/>
-                    <xs:element type="xs:string" name="type" minOccurs="0"/>
-                    <xs:element name="squareMeters">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:float">
-                          <xs:enumeration value="50.77"/>
-                          <xs:enumeration value="30"/>
-                        </xs:restriction>
-                      </xs:simpleType>
+                    <xs:element name="cleaning" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="typeCleaning" minOccurs="0"/>
+                          <xs:element type="xs:string" name="type" minOccurs="0"/>
+                          <xs:element name="squareMeters">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:float">
+                                <xs:enumeration value="50.77"/>
+                                <xs:enumeration value="30"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="dateTimeCleaning">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:dateTime">
+                                <xs:enumeration value="2022-09-03T11:30:00"/>
+                                <xs:enumeration value="2022-10-01T13:20:00"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="name" use="optional"/>
+                        <xs:attribute type="xs:string" name="place" use="optional"/>
+                      </xs:complexType>
                     </xs:element>
-                    <xs:element name="dateTimeCleaning">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:dateTime">
-                          <xs:enumeration value="2022-09-03T11:30:00"/>
-                          <xs:enumeration value="2022-10-01T13:20:00"/>
-                        </xs:restriction>
-                      </xs:simpleType>
+                    <xs:element name="garbageRemoval" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="garbageType">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="Plastic"/>
+                                <xs:enumeration value="Food waster"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="quantity">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:float">
+                                <xs:enumeration value="30.99"/>
+                                <xs:enumeration value="10.23"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="dateRemoval">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:date">
+                                <xs:enumeration value="2022-08-08"/>
+                                <xs:enumeration value="2022-09-08"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="name" use="optional"/>
+                        <xs:attribute type="xs:string" name="place" use="optional"/>
+                      </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-                  <xs:attribute type="xs:string" name="name" use="optional"/>
-                  <xs:attribute type="xs:string" name="place" use="optional"/>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="garbageRemoval" maxOccurs="unbounded" minOccurs="0">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="garbageType">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                          <xs:enumeration value="Plastic"/>
-                          <xs:enumeration value="Food waster"/>
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="quantity">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:float">
-                          <xs:enumeration value="30.99"/>
-                          <xs:enumeration value="10.23"/>
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="dateRemoval">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:date">
-                          <xs:enumeration value="2022-08-08"/>
-                          <xs:enumeration value="2022-09-08"/>
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
-                  </xs:sequence>
-                  <xs:attribute type="xs:string" name="name" use="optional"/>
-                  <xs:attribute type="xs:string" name="place" use="optional"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
@@ -331,6 +337,7 @@
                         <xs:restriction base="xs:string">
                           <xs:enumeration value="Kolya"/>
                           <xs:enumeration value="Ivan"/>
+                          <xs:enumeration value="Vasya"/>
                           <xs:enumeration value="Katya"/>
                         </xs:restriction>
                       </xs:simpleType>
@@ -340,6 +347,7 @@
                         <xs:restriction base="xs:string">
                           <xs:enumeration value="Titov"/>
                           <xs:enumeration value="Kotov"/>
+                          <xs:enumeration value="Zotov"/>
                           <xs:enumeration value="Mashkina"/>
                         </xs:restriction>
                       </xs:simpleType>
@@ -368,6 +376,7 @@
                         <xs:restriction base="xs:byte">
                           <xs:enumeration value="8"/>
                           <xs:enumeration value="2"/>
+                          <xs:enumeration value="3"/>
                           <xs:enumeration value="5"/>
                         </xs:restriction>
                       </xs:simpleType>

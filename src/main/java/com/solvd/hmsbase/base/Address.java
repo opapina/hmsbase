@@ -1,13 +1,23 @@
 package com.solvd.hmsbase.base;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "address")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Address {
 
+    @XmlElement
     private String street;
+    @XmlElement
     private Integer house;
+    @XmlElement
     private Integer flat;
 
     public Address(String street) {
         this.street = street;
+    }
+
+    public Address () {
     }
 
     public Address(String street, Integer house, Integer flat) {

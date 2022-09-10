@@ -1,10 +1,20 @@
 package com.solvd.hmsbase.base;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "apartment")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Apartment {
 
+    @XmlElement
     private Integer room;
+    @XmlElement
     private Double square;
+    @XmlElement(name = "address")
     private Address address;
+
+    public Apartment() {
+    }
 
     public Apartment(Integer room, double square, Address address) {
         this.room = room;

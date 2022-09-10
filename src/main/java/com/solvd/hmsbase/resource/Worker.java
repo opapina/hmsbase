@@ -2,22 +2,34 @@ package com.solvd.hmsbase.resource;
 
 import com.solvd.hmsbase.base.*;
 import com.solvd.hmsbase.vehicle.Vehicle;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
+import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
+@XmlRootElement(name = "worker")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Worker extends Human {
 
-    private static final Logger LOGGER = LogManager.getLogger(Worker.class);
-
+    @XmlElement
     private String profession;
+    @XmlElement
     private Integer experience;
+    @XmlElement
     private BigDecimal salaryPerMonth;
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "address", type = Address.class))
     private Address address;
-    private Vehicle[] vehicles;
-    private Child[] children;
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "vehicle", type = Vehicle.class))
+    private List<String> vehicles;
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "child", type = Child.class))
+    private List<Child> children;
+
+    public Worker() {
+    }
 
     public Worker(String firstName, String lastName, LocalDate dob, String profession, Integer experience) {
         super(firstName, lastName, dob);
@@ -57,19 +69,19 @@ public class Worker extends Human {
         this.address = address;
     }
 
-    public Vehicle[] getVehicle() {
+    public List<String> getVehicles() {
         return vehicles;
     }
 
-    public void setVehicle(Vehicle[] vehicle) {
-        this.vehicles = vehicle;
+    public void setVehicles(List<String> vehicles) {
+        this.vehicles = vehicles;
     }
 
-    public Child[] getChildren() {
+    public List<Child> getChildren() {
         return children;
     }
 
-    public void setChildren(Child[] children) {
+    public void setChildren(List<Child> children) {
         this.children = children;
     }
 }

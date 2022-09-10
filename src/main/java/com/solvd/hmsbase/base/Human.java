@@ -1,22 +1,27 @@
 package com.solvd.hmsbase.base;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
+@XmlType(propOrder = {"firstName", "lastName", "dob"})
 public class Human {
-
-    private static final Logger LOGGER = LogManager.getLogger(Human.class);
-
-    private final String firstName;
-    private final String lastName;
+    @XmlElement
+    private String firstName;
+    @XmlElement
+    private String lastName;
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private LocalDate dob;
 
     public Human(String firstName, String lastName, LocalDate dob) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
+    }
+
+    public Human() {
+
     }
 
     public String getFirstName() {

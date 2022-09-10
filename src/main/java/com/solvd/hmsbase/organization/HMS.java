@@ -4,25 +4,47 @@ import com.solvd.hmsbase.base.Address;
 import com.solvd.hmsbase.client.Client;
 import com.solvd.hmsbase.order.Order;
 import com.solvd.hmsbase.vehicle.Car;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import com.solvd.hmsbase.resource.Worker;
 import com.solvd.hmsbase.service.Service;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlRootElement(name = "hms")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class HMS {
 
-    private static final Logger LOGGER = LogManager.getLogger(HMS.class);
-
+    @XmlElement
     private String name;
+
+    @XmlElement
     private Integer number;
+
+    @XmlElement(name = "address")
     private Address address;
+
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "service", type = Service.class))
     private List<Service> services;
+
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "order", type = Order.class))
     private List<Order> orders;
+
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "address", type = Address.class))
     private List<Address> addresses;
+
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "worker", type = Worker.class))
     private List<Worker> workers;
+
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "client", type = Client.class))
     private List<Client<Address, Car>> clients;
+
+    public HMS() {
+    }
 
     public HMS(String name, Integer number, Address address, List<Address> addresses, List<Service> services) {
         this.name = name;
