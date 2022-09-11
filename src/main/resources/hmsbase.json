@@ -1,0 +1,236 @@
+{
+  "name": "PartizanskiHMS",
+  "number": "34",
+  "address": {
+    "street": "Rumyanceva",
+    "house": "12"
+  },
+  "addresses": [
+    {
+      "street": "Pervomaiskay"
+    },
+    {
+      "street": "Zaharova"
+    },
+    {
+      "street": "Pulihova"
+    }
+  ],
+  "services": [
+    {
+      "cleaning": {
+        "@name": "Cleaning",
+        "@place": "street",
+        "typeCleaning": "dry",
+        "squareMeters": "50.77",
+        "dateTimeCleaning": "2022-09-03T11:30:00"
+      }
+    },
+    {
+      "cleaning": {
+        "@name": "Cleaning",
+        "@place": "apartment",
+        "typeCleaning": "wet",
+        "squareMeters": "30",
+        "dateTimeCleaning": "2022-10-01T13:20:00"
+      }
+    },
+    {
+      "garbageRemoval": {
+        "@name": "GarbageRemoval",
+        "@place": "street",
+        "garbageType": "Plastic",
+        "quantity": "30.99",
+        "dateRemoval": "2022-08-08"
+      }
+    },
+    {
+      "garbageRemoval": {
+        "@name": "GarbageRemoval",
+        "@place": "house",
+        "garbageType": "Food waster",
+        "quantity": "10.23",
+        "dateRemoval": "2022-09-08"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "serviceName": "Cleaning",
+      "address": {
+        "street": "Zaharova",
+        "house": "23",
+        "flat": "15"
+      }
+    },
+    {
+      "id": "2",
+      "serviceName": "Garbage Removal",
+      "address": {
+        "street": "Frunze",
+        "house": "5",
+        "flat": "3"
+      }
+    }
+  ],
+  "clients": [
+    {
+      "firstName": "Vasya",
+      "lastName": "Ivanov",
+      "dob": "1988-01-01",
+      "apartments": [
+        {
+          "room": "2",
+          "square": "60.54",
+          "address": {
+            "street": "Frunze",
+            "house": "50",
+            "flat": "30"
+          }
+        },
+        {
+          "room": "1",
+          "square": "40.10",
+          "address": {
+            "street": "Kozlova",
+            "house": "20",
+            "flat": "77"
+          }
+        }
+      ]
+    },
+    {
+      "firstName": "Yulya",
+      "lastName": "Znanina",
+      "dob": "1995-06-08",
+      "apartments": {
+        "apartment": {
+          "room": "3",
+          "square": "88.25",
+          "address": {
+            "street": "Platonava",
+            "house": "1",
+            "flat": "38"
+          }
+        }
+      },
+      "vehicles": [
+        {
+          "car": {
+            "model": "Polo",
+            "brand": "Volkswagen"
+          }
+        },
+        {
+          "bicycle": {
+            "model": "child-17",
+            "brand": "Aist",
+            "wheelsCount": "3"
+          }
+        }
+      ]
+    },
+    {
+      "firstName": "Lubov",
+      "lastName": "Petrova",
+      "dob": "1990-01-09",
+      "apartments": {
+        "apartment": {
+          "room": "1",
+          "square": "50.30",
+          "address": {
+            "street": "Azgura",
+            "house": "51",
+            "flat": "90"
+          }
+        }
+      },
+      "children": [
+        {
+          "firstName": "Ivan",
+          "lastName": "Petrov",
+          "dob": "2013-09-02",
+          "infantAge": "9"
+        },
+        {
+          "firstName": "Vova",
+          "lastName": "Petrov",
+          "dob": "2016-06-21",
+          "infantAge": "7"
+        }
+      ]
+    }
+  ],
+  "workers": [
+    {
+      "firstName": "Kolya",
+      "lastName": "Titov",
+      "dob": "1993-12-10",
+      "profession": "piper",
+      "experience": "8"
+    },
+    {
+      "firstName": "Ivan",
+      "lastName": "Kotov",
+      "dob": "2001-01-27",
+      "profession": "welder",
+      "experience": "2",
+      "salary": "1597.25",
+      "address": {
+        "street": "Chapaeva",
+        "house": "21",
+        "flat": "4"
+      },
+      "vehicles": [
+        {
+          "car": {
+            "model": "3",
+            "brand": "bmw",
+            "engine": "123456"
+          }
+        },
+        {
+          "bicycle": {
+            "model": "adult-25",
+            "brand": "Fitness",
+            "wheelsCount": "2"
+          }
+        }
+      ]
+    },
+    {
+      "firstName": "Vasya",
+      "lastName": "Zotov",
+      "dob": "1980-03-15",
+      "profession": "piper",
+      "experience": "3"
+    },
+    {
+      "firstName": "Katya",
+      "lastName": "Mashkina",
+      "dob": "1997-31-12",
+      "profession": "cleaner",
+      "experience": "5",
+      "children": [
+        {
+          "firstName": "Kolya",
+          "lastName": "Mashkin",
+          "dob": "2014-05-25",
+          "infantAge": "8"
+        },
+        {
+          "firstName": "Nadya",
+          "lastName": "Mashkina",
+          "dob": "2008-01-05",
+          "infantAge": "14"
+        },
+        {
+          "firstName": "Ira",
+          "lastName": "Mashkina",
+          "dob": "2011-10-27"
+        }
+      ]
+    }
+  ]
+}
