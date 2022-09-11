@@ -23,9 +23,6 @@ public class GarbageRemoval extends Service {
     @XmlJavaTypeAdapter(DateTimeAdapter.class)
     private LocalDate dateRemoval;
 
-    public GarbageRemoval () {
-    }
-
     public BigDecimal getQuantity() {
         return quantity;
     }

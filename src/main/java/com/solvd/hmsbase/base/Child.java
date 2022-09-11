@@ -9,9 +9,6 @@ public class Child extends Human {
     @XmlElement
     private Integer infantAge;
 
-    public Child() {
-    }
-
     public Integer getInfantAge() {
         return infantAge;
     }

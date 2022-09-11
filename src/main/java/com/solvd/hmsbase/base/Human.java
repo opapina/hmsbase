@@ -16,9 +16,6 @@ public class Human {
     @XmlJavaTypeAdapter(DateAdapter.class)
     private LocalDate dob;
 
-    public Human() {
-    }
-
     public String getFirstName() {
         return firstName;
     }

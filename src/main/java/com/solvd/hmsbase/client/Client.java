@@ -24,9 +24,6 @@ public class Client<A, V> extends Human {
     @XmlElements(@XmlElement(name = "child", type = Child.class))
     private List<Child> children;
 
-    public Client() {
-    }
-
     public List<A> getApartment() {
         return apartments;
     }

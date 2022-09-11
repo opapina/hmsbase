@@ -29,9 +29,6 @@ public class Worker extends Human {
     @XmlElements(@XmlElement(name = "child", type = Child.class))
     private List<Child> children;
 
-    public Worker() {
-    }
-
     public String getProfession() {
         return profession;
     }

@@ -12,9 +12,6 @@ public class Vehicle {
     @XmlElement
     private Integer wheelsCount;
 
-    public  Vehicle () {
-    }
-
     public String getModel() {
         return model;
     }

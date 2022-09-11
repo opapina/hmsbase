@@ -43,9 +43,6 @@ public class HMS {
     @XmlElements(@XmlElement(name = "client", type = Client.class))
     private List<Client<Address, Car>> clients;
 
-    public HMS() {
-    }
-
     public String getName() {
         return name;
     }

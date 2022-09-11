@@ -15,9 +15,6 @@ public class Order {
     @XmlElement
     private Address address;
 
-    public Order() {
-    }
-
     public Integer getId() {
         return id;
     }

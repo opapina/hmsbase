@@ -13,18 +13,16 @@ import java.time.LocalDateTime;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cleaning extends Service {
 
-    @XmlElement
+    @XmlElementRef
+    @XmlElement(name = "typeCleaning")
     private String typeCleaning;
-    @XmlElement
+    @XmlElement(name = "squareMeters")
     @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal squareMeters;
 
-    @XmlElement
+    @XmlElement(name = "dateTimeCleaning")
     @XmlJavaTypeAdapter(DateTimeAdapter.class)
     private LocalDateTime dateTimeCleaning;
-
-    public Cleaning () {
-    }
 
     public String getTypeCleaning() {
         return typeCleaning;

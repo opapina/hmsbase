@@ -274,24 +274,24 @@
                           <xs:element name="vehicle" maxOccurs="unbounded" minOccurs="0">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="model">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="Polo"/>
-                                      <xs:enumeration value="adult-17"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
+                                <xs:element name="car" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="model"/>
+                                      <xs:element type="xs:string" name="brand"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
                                 </xs:element>
-                                <xs:element name="brand">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="Volkswagen"/>
-                                      <xs:enumeration value="Aist"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
+                                <xs:element name="bicycle" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="model"/>
+                                      <xs:element type="xs:string" name="brand"/>
+                                      <xs:element type="xs:byte" name="wheelsCount"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
                                 </xs:element>
                               </xs:sequence>
-                              <xs:attribute type="xs:string" name="type" use="optional"/>
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>
@@ -317,6 +317,14 @@
                                     <xs:restriction base="xs:date">
                                       <xs:enumeration value="2013-09-02"/>
                                       <xs:enumeration value="2016-06-21"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="infantAge">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:byte">
+                                      <xs:enumeration value="9"/>
+                                      <xs:enumeration value="7"/>
                                     </xs:restriction>
                                   </xs:simpleType>
                                 </xs:element>
@@ -403,24 +411,25 @@
                           <xs:element name="vehicle" maxOccurs="unbounded" minOccurs="0">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="model">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="3"/>
-                                      <xs:enumeration value="adult-25"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
+                                <xs:element name="car" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:byte" name="model"/>
+                                      <xs:element type="xs:string" name="brand"/>
+                                      <xs:element type="xs:int" name="engine"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
                                 </xs:element>
-                                <xs:element name="brand">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="bmw"/>
-                                      <xs:enumeration value="Fitness"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
+                                <xs:element name="bicycle" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="model"/>
+                                      <xs:element type="xs:string" name="brand"/>
+                                      <xs:element type="xs:byte" name="wheelsCount"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
                                 </xs:element>
                               </xs:sequence>
-                              <xs:attribute type="xs:string" name="type" use="optional"/>
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>
@@ -458,7 +467,14 @@
                                     </xs:restriction>
                                   </xs:simpleType>
                                 </xs:element>
-                                <xs:element type="xs:byte" name="age" minOccurs="0"/>
+                                <xs:element name="infantAge" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:byte">
+                                      <xs:enumeration value="8"/>
+                                      <xs:enumeration value="14"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>

@@ -12,9 +12,6 @@ public class Car extends Vehicle {
     @XmlElement
     private String engine;
 
-    public  Car() {
-    }
-
     public String getEngine() {
         return engine;
     }

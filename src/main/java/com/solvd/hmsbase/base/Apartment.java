@@ -13,9 +13,6 @@ public class Apartment {
     @XmlElement(name = "address")
     private Address address;
 
-    public Apartment() {
-    }
-
     public Integer getRoom() {
         return room;
     }
