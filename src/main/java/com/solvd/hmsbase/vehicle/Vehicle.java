@@ -9,7 +9,7 @@ public class Vehicle {
     private String model;
     @XmlElement
     private String brand;
-
+    @XmlElement
     private Integer wheelsCount;
 
     public  Vehicle () {
@@ -37,5 +37,14 @@ public class Vehicle {
 
     public void setWheelsCount(Integer wheelsCount) {
         this.wheelsCount = wheelsCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", wheelsCount=" + wheelsCount +
+                '}';
     }
 }

@@ -14,32 +14,32 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class HMS {
 
-    @XmlElement
+    @XmlElement(name = "name")
     private String name;
 
-    @XmlElement
+    @XmlElement(name = "number")
     private Integer number;
 
     @XmlElement(name = "address")
     private Address address;
 
-    @XmlElementWrapper
+    @XmlElementWrapper(name = "services")
     @XmlElements(@XmlElement(name = "service", type = Service.class))
     private List<Service> services;
 
-    @XmlElementWrapper
+    @XmlElementWrapper(name = "orders")
     @XmlElements(@XmlElement(name = "order", type = Order.class))
     private List<Order> orders;
 
-    @XmlElementWrapper
+    @XmlElementWrapper(name = "address")
     @XmlElements(@XmlElement(name = "address", type = Address.class))
     private List<Address> addresses;
 
-    @XmlElementWrapper
+    @XmlElementWrapper(name = "workers")
     @XmlElements(@XmlElement(name = "worker", type = Worker.class))
     private List<Worker> workers;
 
-    @XmlElementWrapper
+    @XmlElementWrapper(name = "clients")
     @XmlElements(@XmlElement(name = "client", type = Client.class))
     private List<Client<Address, Car>> clients;
 
@@ -107,5 +107,19 @@ public class HMS {
 
     public void setClient(List<Client<Address, Car>> clients) {
         this.clients = clients;
+    }
+
+    @Override
+    public String toString() {
+        return "HMS{" +
+                "name='" + name + '\'' +
+                ", number=" + number +
+                ", address=" + address +
+                ", services=" + services +
+                ", orders=" + orders +
+                ", addresses=" + addresses +
+                ", workers=" + workers +
+                ", clients=" + clients +
+                '}';
     }
 }

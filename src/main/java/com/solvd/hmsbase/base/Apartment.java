@@ -39,4 +39,13 @@ public class Apartment {
     public void setAddress(Address address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "Apartment{" +
+                "room=" + room +
+                ", square=" + square +
+                ", address=" + address +
+                '}';
+    }
 }

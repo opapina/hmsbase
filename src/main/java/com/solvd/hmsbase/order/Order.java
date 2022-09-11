@@ -1,7 +1,6 @@
 package com.solvd.hmsbase.order;
 
 import com.solvd.hmsbase.base.Address;
-import com.solvd.hmsbase.resource.Worker;
 
 import javax.xml.bind.annotation.*;
 
@@ -47,4 +46,12 @@ public class Order {
         return address.getStreet();
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", serviceName='" + serviceName + '\'' +
+                ", address=" + address +
+                '}';
+    }
 }

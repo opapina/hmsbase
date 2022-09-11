@@ -1,6 +1,7 @@
 package com.solvd.hmsbase.service;
 
 import com.solvd.hmsbase.base.DateAdapter;
+import com.solvd.hmsbase.base.DateTimeAdapter;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -15,7 +16,9 @@ public class GarbageRemoval extends Service {
     private String garbageType;
     @XmlElement
     private BigDecimal quantity;
-    @XmlJavaTypeAdapter(DateAdapter.class)
+
+    @XmlElement
+    @XmlJavaTypeAdapter(DateTimeAdapter.class)
     private LocalDate dateRemoval;
 
     public GarbageRemoval () {
@@ -47,5 +50,14 @@ public class GarbageRemoval extends Service {
 
     public String getTypeService() {
         return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return "GarbageRemoval{" +
+                "garbageType='" + garbageType + '\'' +
+                ", quantity=" + quantity +
+                ", dateRemoval=" + dateRemoval +
+                "} " + super.toString();
     }
 }

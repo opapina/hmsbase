@@ -30,4 +30,13 @@ public class Human {
     public LocalDate getDob() {
         return dob;
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dob=" + dob +
+                '}';
+    }
 }

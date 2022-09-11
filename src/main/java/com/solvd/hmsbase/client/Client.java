@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.annotation.*;
-import java.time.LocalDate;
 import java.util.List;
 
 @XmlRootElement(name = "client")
@@ -50,5 +49,14 @@ public class Client<A, V> extends Human {
 
     public void setChildren(List<Child> children) {
         this.children = children;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "apartments=" + apartments +
+                ", vehicles=" + vehicles +
+                ", children=" + children +
+                "} " + super.toString();
     }
 }
