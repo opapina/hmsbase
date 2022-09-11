@@ -20,12 +20,6 @@ public class Address {
     public Address () {
     }
 
-    public Address(String street, Integer house, Integer flat) {
-        this.street = street;
-        this.house = house;
-        this.flat = flat;
-    }
-
     public String getStreet() {
         return street;
     }

@@ -13,10 +13,6 @@ public class Child extends Human {
     public Child() {
     }
 
-    public Child(String firstName, String lastName, LocalDate dob) {
-        super(firstName, lastName, dob);
-    }
-
     public Integer getInfantAge() {
         return infantAge;
     }

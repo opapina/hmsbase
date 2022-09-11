@@ -46,14 +46,6 @@ public class HMS {
     public HMS() {
     }
 
-    public HMS(String name, Integer number, Address address, List<Address> addresses, List<Service> services) {
-        this.name = name;
-        this.number = number;
-        this.address = address;
-        this.addresses = addresses;
-        this.services = services;
-    }
-
     public String getName() {
         return name;
     }

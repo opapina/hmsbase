@@ -5,7 +5,6 @@ import com.solvd.hmsbase.vehicle.Vehicle;
 
 import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 @XmlRootElement(name = "worker")
@@ -18,8 +17,8 @@ public class Worker extends Human {
     private Integer experience;
     @XmlElement
     private BigDecimal salaryPerMonth;
-    @XmlElementWrapper
-    @XmlElements(@XmlElement(name = "address", type = Address.class))
+
+    @XmlElement
     private Address address;
     @XmlElementWrapper
     @XmlElements(@XmlElement(name = "vehicle", type = Vehicle.class))
@@ -29,12 +28,6 @@ public class Worker extends Human {
     private List<Child> children;
 
     public Worker() {
-    }
-
-    public Worker(String firstName, String lastName, LocalDate dob, String profession, Integer experience) {
-        super(firstName, lastName, dob);
-        this.profession = profession;
-        this.experience = experience;
     }
 
     public String getProfession() {

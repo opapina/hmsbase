@@ -15,15 +15,8 @@ public class Order {
     private String serviceName;
     @XmlElement
     private Address address;
-    @XmlElement
-    private Worker worker;
 
     public Order() {
-    }
-    public Order(Integer id, String serviceName, Address address) {
-        this.id = id;
-        this.serviceName = serviceName;
-        this.address = address;
     }
 
     public Integer getId() {
@@ -54,11 +47,4 @@ public class Order {
         return address.getStreet();
     }
 
-    public Worker getWorker() {
-        return worker;
-    }
-
-    public void setWorker(Worker worker) {
-        this.worker = worker;
-    }
 }

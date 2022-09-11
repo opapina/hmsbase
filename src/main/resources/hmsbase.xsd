@@ -43,8 +43,14 @@
                     <xs:element name="cleaning" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:string" name="typeCleaning" minOccurs="0"/>
-                          <xs:element type="xs:string" name="type" minOccurs="0"/>
+                          <xs:element name="typeCleaning">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="dry"/>
+                                <xs:enumeration value="wet"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
                           <xs:element name="squareMeters">
                             <xs:simpleType>
                               <xs:restriction base="xs:float">

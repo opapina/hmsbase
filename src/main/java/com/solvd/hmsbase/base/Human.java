@@ -5,23 +5,18 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
-@XmlType(propOrder = {"firstName", "lastName", "dob"})
+@XmlType
 public class Human {
     @XmlElement
     private String firstName;
     @XmlElement
     private String lastName;
+
+    @XmlElement
     @XmlJavaTypeAdapter(DateAdapter.class)
     private LocalDate dob;
 
-    public Human(String firstName, String lastName, LocalDate dob) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dob = dob;
-    }
-
     public Human() {
-
     }
 
     public String getFirstName() {
@@ -34,9 +29,5 @@ public class Human {
 
     public LocalDate getDob() {
         return dob;
-    }
-
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
     }
 }

@@ -23,6 +23,6 @@ public class JaxBParser implements IParse {
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
+        LOGGER.info(hms);
     }
-
 }

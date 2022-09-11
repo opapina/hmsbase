@@ -22,13 +22,6 @@ public class Cleaning extends Service {
     public Cleaning () {
     }
 
-    public Cleaning(String name, String place, String typeCleaning, BigDecimal squareMeters, LocalDateTime dateTimeCleaning) {
-        super(name, place);
-        this.squareMeters = squareMeters;
-        this.dateTimeCleaning = dateTimeCleaning;
-        this.typeCleaning = typeCleaning;
-    }
-
     public String getTypeCleaning() {
         return typeCleaning;
     }

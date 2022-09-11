@@ -27,9 +27,6 @@ public class Client<A, V> extends Human {
 
     public Client() {
     }
-    public Client(String firstName, String lastName, LocalDate dob, List<Apartment> apartments) {
-        super(firstName, lastName, dob);
-    }
 
     public List<A> getApartment() {
         return apartments;

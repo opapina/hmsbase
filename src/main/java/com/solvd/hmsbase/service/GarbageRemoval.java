@@ -21,13 +21,6 @@ public class GarbageRemoval extends Service {
     public GarbageRemoval () {
     }
 
-    public GarbageRemoval(String name, String place, String garbageType, BigDecimal quantity, LocalDate dateRemoval) {
-        super(name, place);
-        this.quantity = quantity;
-        this.dateRemoval = dateRemoval;
-        this.garbageType = garbageType;
-    }
-
     public BigDecimal getQuantity() {
         return quantity;
     }

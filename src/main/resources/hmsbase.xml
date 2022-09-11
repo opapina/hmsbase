@@ -27,7 +27,7 @@
         </service>
         <service>
             <cleaning name="Cleaning" place="apartment">
-                <type>wet</type>
+                <typeCleaning>wet</typeCleaning>
                 <squareMeters>30</squareMeters>
                 <dateTimeCleaning>2022-10-01T13:20:00</dateTimeCleaning>
             </cleaning>

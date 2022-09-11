@@ -7,19 +7,14 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Service {
 
-    @XmlElement
-    @XmlAttribute
+
+    @XmlAttribute(name = "name")
     public String name;
-    @XmlElement
-    @XmlAttribute
+
+    @XmlAttribute(name = "place")
     public String place;
 
     public Service() {
-    }
-
-    public Service(String name, String place) {
-        this.name = name;
-        this.place = place;
     }
 
     public String getName() {

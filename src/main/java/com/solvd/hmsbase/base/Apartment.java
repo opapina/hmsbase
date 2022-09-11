@@ -16,12 +16,6 @@ public class Apartment {
     public Apartment() {
     }
 
-    public Apartment(Integer room, double square, Address address) {
-        this.room = room;
-        this.square = square;
-        this.address = address;
-    }
-
     public Integer getRoom() {
         return room;
     }

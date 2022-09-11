@@ -14,10 +14,6 @@ public class Vehicle {
 
     public  Vehicle () {
     }
-    public Vehicle(String model, String brand) {
-        this.model = model;
-        this.brand = brand;
-    }
 
     public String getModel() {
         return model;

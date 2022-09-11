@@ -1,24 +1,27 @@
 package com.solvd.hmsbase.base;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateAdapter extends XmlAdapter<String, Date> {
 
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static final ThreadLocal<DateFormat> dateFormat = new ThreadLocal<DateFormat>() {
+
+        @Override
+        protected DateFormat initialValue() {
+            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        }
+    };
 
     @Override
     public String marshal(Date v) throws Exception {
-        synchronized (dateFormat) {
-            return dateFormat.format(v);
-        }
+        return dateFormat.get().format(v);
     }
 
     @Override
     public Date unmarshal(String v) throws Exception {
-        synchronized (dateFormat) {
-            return dateFormat.parse(v);
-        }
+        return dateFormat.get().parse(v);
     }
 }

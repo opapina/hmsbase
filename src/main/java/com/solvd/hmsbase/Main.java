@@ -13,7 +13,7 @@ public class Main {
         IParse dom = new DOMParser();
         dom.parse();
 
-        IParse jaxB = (IParse) new JaxBParser();
+        IParse jaxB = new JaxBParser();
         jaxB.parse();
 
     }

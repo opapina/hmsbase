@@ -87,8 +87,8 @@ public class DOMParser implements IParse {
                                     }
                                 }
                                 NamedNodeMap attributes = hmsField.getAttributes();
-                                for (int k = 0; k < attributes.getLength(); k++) {
-                                    System.out.println("Attr's name: " + attributes.item(k).getNodeName() + ", attr's value: " + attributes.item(k).getNodeValue());
+                                for (int d = 0; d < attributes.getLength(); d++) {
+                                    System.out.println("Attr's name: " + attributes.item(d).getNodeName() + ", attr's value: " + attributes.item(d).getNodeValue());
                                 }
                             }
                         }
