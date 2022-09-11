@@ -1,6 +1,8 @@
 package com.solvd.hmsbase.service;
 
+import com.solvd.hmsbase.base.BigDecimalAdapter;
 import com.solvd.hmsbase.base.DateAdapter;
+import com.solvd.hmsbase.base.DateTimeAdapter;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -14,9 +16,11 @@ public class Cleaning extends Service {
     @XmlElement
     private String typeCleaning;
     @XmlElement
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal squareMeters;
 
-    @XmlJavaTypeAdapter(DateAdapter.class)
+    @XmlElement
+    @XmlJavaTypeAdapter(DateTimeAdapter.class)
     private LocalDateTime dateTimeCleaning;
 
     public Cleaning () {
@@ -44,5 +48,14 @@ public class Cleaning extends Service {
 
     public void setDateTimeCleaning(LocalDateTime dateTimeCleaning) {
         this.dateTimeCleaning = dateTimeCleaning;
+    }
+
+    @Override
+    public String toString() {
+        return "Cleaning{" +
+                "typeCleaning='" + typeCleaning + '\'' +
+                ", squareMeters=" + squareMeters +
+                ", dateTimeCleaning=" + dateTimeCleaning +
+                "} " + super.toString();
     }
 }

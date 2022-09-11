@@ -1,7 +1,6 @@
 package com.solvd.hmsbase.base;
 
 import javax.xml.bind.annotation.*;
-import java.time.LocalDate;
 
 @XmlRootElement(name = "child")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -19,5 +18,12 @@ public class Child extends Human {
 
     public void setInfantAge(Integer infantAge) {
         this.infantAge = infantAge;
+    }
+
+    @Override
+    public String toString() {
+        return "Child{" +
+                "infantAge=" + infantAge +
+                "} " + super.toString();
     }
 }

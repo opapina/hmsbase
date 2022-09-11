@@ -4,6 +4,7 @@ import com.solvd.hmsbase.base.*;
 import com.solvd.hmsbase.vehicle.Vehicle;
 
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Worker extends Human {
     @XmlElement
     private Integer experience;
     @XmlElement
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal salaryPerMonth;
 
     @XmlElement
@@ -76,5 +78,17 @@ public class Worker extends Human {
 
     public void setChildren(List<Child> children) {
         this.children = children;
+    }
+
+    @Override
+    public String toString() {
+        return "Worker{" +
+                "profession='" + profession + '\'' +
+                ", experience=" + experience +
+                ", salaryPerMonth=" + salaryPerMonth +
+                ", address=" + address +
+                ", vehicles=" + vehicles +
+                ", children=" + children +
+                "} " + super.toString();
     }
 }

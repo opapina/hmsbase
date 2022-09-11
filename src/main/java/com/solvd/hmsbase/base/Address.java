@@ -43,4 +43,13 @@ public class Address {
     public void setFlat(Integer flat) {
         this.flat = flat;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "street='" + street + '\'' +
+                ", house=" + house +
+                ", flat=" + flat +
+                '}';
+    }
 }
