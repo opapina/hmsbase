@@ -1,15 +1,21 @@
 package com.solvd.hmsbase.vehicle;
 
+import com.solvd.hmsbase.service.Cleaning;
+import com.solvd.hmsbase.service.GarbageRemoval;
+
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlSeeAlso({Bicycle.class, Car.class})
 public class Vehicle {
 
+    @XmlElement
     private String model;
+    @XmlElement
     private String brand;
+    @XmlElement
     private Integer wheelsCount;
-
-    public Vehicle(String model, String brand) {
-        this.model = model;
-        this.brand = brand;
-    }
 
     public String getModel() {
         return model;
@@ -33,5 +39,14 @@ public class Vehicle {
 
     public void setWheelsCount(Integer wheelsCount) {
         this.wheelsCount = wheelsCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", wheelsCount=" + wheelsCount +
+                '}';
     }
 }

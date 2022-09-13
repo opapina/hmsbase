@@ -3,34 +3,50 @@ package com.solvd.hmsbase.organization;
 import com.solvd.hmsbase.base.Address;
 import com.solvd.hmsbase.client.Client;
 import com.solvd.hmsbase.order.Order;
+import com.solvd.hmsbase.service.Cleaning;
+import com.solvd.hmsbase.service.GarbageRemoval;
+import com.solvd.hmsbase.vehicle.Bicycle;
 import com.solvd.hmsbase.vehicle.Car;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import com.solvd.hmsbase.resource.Worker;
 import com.solvd.hmsbase.service.Service;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlRootElement(name = "hms")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class HMS {
 
-    private static final Logger LOGGER = LogManager.getLogger(HMS.class);
-
+    @XmlElement(name = "name")
     private String name;
-    private Integer number;
-    private Address address;
-    private List<Service> services;
-    private List<Order> orders;
-    private List<Address> addresses;
-    private List<Worker> workers;
-    private List<Client<Address, Car>> clients;
 
-    public HMS(String name, Integer number, Address address, List<Address> addresses, List<Service> services) {
-        this.name = name;
-        this.number = number;
-        this.address = address;
-        this.addresses = addresses;
-        this.services = services;
-    }
+    @XmlElement(name = "number")
+    private Integer number;
+
+    @XmlElement(name = "address")
+    private Address address;
+
+    @XmlElementWrapper
+    @XmlElements({
+            @XmlElement(name = "cleaning", type = Cleaning.class),
+            @XmlElement(name = "garbage-removal", type = GarbageRemoval.class)})
+    private List<Service> services;
+
+    @XmlElementWrapper(name = "orders")
+    @XmlElements(@XmlElement(name = "order", type = Order.class))
+    private List<Order> orders;
+
+    @XmlElementWrapper(name = "address")
+    @XmlElements(@XmlElement(name = "address", type = Address.class))
+    private List<Address> addresses;
+
+    @XmlElementWrapper(name = "workers")
+    @XmlElements(@XmlElement(name = "worker", type = Worker.class))
+    private List<Worker> workers;
+
+    @XmlElementWrapper(name = "clients")
+    @XmlElements(@XmlElement(name = "client", type = Client.class))
+    private List<Client<Address, Car>> clients;
 
     public String getName() {
         return name;
@@ -93,5 +109,19 @@ public class HMS {
 
     public void setClient(List<Client<Address, Car>> clients) {
         this.clients = clients;
+    }
+
+    @Override
+    public String toString() {
+        return "HMS{" +
+                "name='" + name + '\'' +
+                ", number=" + number +
+                ", address=" + address +
+                ", services=" + services +
+                ", orders=" + orders +
+                ", addresses=" + addresses +
+                ", workers=" + workers +
+                ", clients=" + clients +
+                '}';
     }
 }

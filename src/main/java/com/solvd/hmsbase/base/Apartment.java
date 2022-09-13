@@ -1,16 +1,17 @@
 package com.solvd.hmsbase.base;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "apartment")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Apartment {
 
+    @XmlElement
     private Integer room;
+    @XmlElement
     private Double square;
+    @XmlElement(name = "address")
     private Address address;
-
-    public Apartment(Integer room, double square, Address address) {
-        this.room = room;
-        this.square = square;
-        this.address = address;
-    }
 
     public Integer getRoom() {
         return room;
@@ -34,5 +35,14 @@ public class Apartment {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Apartment{" +
+                "room=" + room +
+                ", square=" + square +
+                ", address=" + address +
+                '}';
     }
 }

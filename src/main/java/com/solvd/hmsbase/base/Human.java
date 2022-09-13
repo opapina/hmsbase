@@ -1,23 +1,20 @@
 package com.solvd.hmsbase.base;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
+@XmlType
 public class Human {
+    @XmlElement
+    private String firstName;
+    @XmlElement
+    private String lastName;
 
-    private static final Logger LOGGER = LogManager.getLogger(Human.class);
-
-    private final String firstName;
-    private final String lastName;
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private LocalDate dob;
-
-    public Human(String firstName, String lastName, LocalDate dob) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dob = dob;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -31,7 +28,12 @@ public class Human {
         return dob;
     }
 
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+    @Override
+    public String toString() {
+        return "Human{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dob=" + dob +
+                '}';
     }
 }

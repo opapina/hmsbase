@@ -1,21 +1,27 @@
 package com.solvd.hmsbase.service;
 
+import com.solvd.hmsbase.base.BigDecimalAdapter;
+import com.solvd.hmsbase.base.DateAdapter;
+import com.solvd.hmsbase.base.DateTimeAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@XmlRootElement(name = "garbageRemoval")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class GarbageRemoval extends Service {
 
-
+    @XmlElement
     private String garbageType;
+    @XmlElement
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal quantity;
-    private LocalDate dateRemoval;
 
-    public GarbageRemoval(String name, String place, String garbageType, BigDecimal quantity, LocalDate dateRemoval) {
-        super(name, place);
-        this.quantity = quantity;
-        this.dateRemoval = dateRemoval;
-        this.garbageType = garbageType;
-    }
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    private LocalDate dateRemoval;
 
     public BigDecimal getQuantity() {
         return quantity;
@@ -43,5 +49,14 @@ public class GarbageRemoval extends Service {
 
     public String getTypeService() {
         return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return "GarbageRemoval{" +
+                "garbageType='" + garbageType + '\'' +
+                ", quantity=" + quantity +
+                ", dateRemoval=" + dateRemoval +
+                "} " + super.toString();
     }
 }

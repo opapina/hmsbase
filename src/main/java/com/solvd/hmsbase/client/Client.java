@@ -1,23 +1,31 @@
 package com.solvd.hmsbase.client;
 
 import com.solvd.hmsbase.base.*;
+import com.solvd.hmsbase.vehicle.Bicycle;
+import com.solvd.hmsbase.vehicle.Car;
+import com.solvd.hmsbase.vehicle.Vehicle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlRootElement(name = "client")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Client<A, V> extends Human {
 
     private static final Logger LOGGER = LogManager.getLogger(Client.class);
 
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "apartment", type = Apartment.class))
     private List<A> apartments;
+    @XmlElementWrapper
+    @XmlElements({@XmlElement(name = "car", type = Car.class),
+            @XmlElement(name = "bicycle", type = Bicycle.class)})
     private List<V> vehicles;
+    @XmlElementWrapper
+    @XmlElements(@XmlElement(name = "child", type = Child.class))
     private List<Child> children;
-
-    public Client(String firstName, String lastName, LocalDate dob, List<Apartment> apartments) {
-        super(firstName, lastName, dob);
-    }
 
     public List<A> getApartment() {
         return apartments;
@@ -41,5 +49,14 @@ public class Client<A, V> extends Human {
 
     public void setChildren(List<Child> children) {
         this.children = children;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "apartments=" + apartments +
+                ", vehicles=" + vehicles +
+                ", children=" + children +
+                "} " + super.toString();
     }
 }

@@ -16,10 +16,10 @@
         <xs:element name="addresses">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="streets">
+              <xs:element name="address" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="street" maxOccurs="unbounded" minOccurs="0">
+                    <xs:element name="street">
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
                           <xs:enumeration value="Pervomaiskay"/>
@@ -40,8 +40,14 @@
               <xs:element name="cleaning" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="typeCleaning" minOccurs="0"/>
-                    <xs:element type="xs:string" name="type" minOccurs="0"/>
+                    <xs:element name="typeCleaning">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="dry"/>
+                          <xs:enumeration value="wet"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
                     <xs:element name="squareMeters">
                       <xs:simpleType>
                         <xs:restriction base="xs:float">
@@ -63,7 +69,7 @@
                   <xs:attribute type="xs:string" name="place" use="optional"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="garbageRemoval" maxOccurs="unbounded" minOccurs="0">
+              <xs:element name="garbage-removal" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="garbageType">
@@ -259,27 +265,21 @@
                     <xs:element name="vehicles" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="vehicle" maxOccurs="unbounded" minOccurs="0">
+                          <xs:element name="car">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="model">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="Polo"/>
-                                      <xs:enumeration value="adult-17"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
-                                </xs:element>
-                                <xs:element name="brand">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="Volkswagen"/>
-                                      <xs:enumeration value="Aist"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
-                                </xs:element>
+                                <xs:element type="xs:string" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
                               </xs:sequence>
-                              <xs:attribute type="xs:string" name="type" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="bicycle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
+                                <xs:element type="xs:byte" name="wheelsCount"/>
+                              </xs:sequence>
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>
@@ -308,6 +308,14 @@
                                     </xs:restriction>
                                   </xs:simpleType>
                                 </xs:element>
+                                <xs:element name="infantAge">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:byte">
+                                      <xs:enumeration value="9"/>
+                                      <xs:enumeration value="7"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
@@ -331,6 +339,7 @@
                         <xs:restriction base="xs:string">
                           <xs:enumeration value="Kolya"/>
                           <xs:enumeration value="Ivan"/>
+                          <xs:enumeration value="Vasya"/>
                           <xs:enumeration value="Katya"/>
                         </xs:restriction>
                       </xs:simpleType>
@@ -340,6 +349,7 @@
                         <xs:restriction base="xs:string">
                           <xs:enumeration value="Titov"/>
                           <xs:enumeration value="Kotov"/>
+                          <xs:enumeration value="Zotov"/>
                           <xs:enumeration value="Mashkina"/>
                         </xs:restriction>
                       </xs:simpleType>
@@ -368,6 +378,7 @@
                         <xs:restriction base="xs:byte">
                           <xs:enumeration value="8"/>
                           <xs:enumeration value="2"/>
+                          <xs:enumeration value="3"/>
                           <xs:enumeration value="5"/>
                         </xs:restriction>
                       </xs:simpleType>
@@ -385,27 +396,22 @@
                     <xs:element name="vehicles" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="vehicle" maxOccurs="unbounded" minOccurs="0">
+                          <xs:element name="car">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="model">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="3"/>
-                                      <xs:enumeration value="adult-25"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
-                                </xs:element>
-                                <xs:element name="brand">
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:enumeration value="bmw"/>
-                                      <xs:enumeration value="Fitness"/>
-                                    </xs:restriction>
-                                  </xs:simpleType>
-                                </xs:element>
+                                <xs:element type="xs:byte" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
+                                <xs:element type="xs:int" name="engine"/>
                               </xs:sequence>
-                              <xs:attribute type="xs:string" name="type" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="bicycle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
+                                <xs:element type="xs:byte" name="wheelsCount"/>
+                              </xs:sequence>
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>
@@ -443,7 +449,14 @@
                                     </xs:restriction>
                                   </xs:simpleType>
                                 </xs:element>
-                                <xs:element type="xs:byte" name="age" minOccurs="0"/>
+                                <xs:element name="infantAge" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:byte">
+                                      <xs:enumeration value="8"/>
+                                      <xs:enumeration value="14"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>

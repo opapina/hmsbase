@@ -1,20 +1,27 @@
 package com.solvd.hmsbase.service;
 
+import com.solvd.hmsbase.base.BigDecimalAdapter;
+import com.solvd.hmsbase.base.DateAdapter;
+import com.solvd.hmsbase.base.DateTimeAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@XmlRootElement(name = "cleaning")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Cleaning extends Service {
 
+    @XmlElement(name = "typeCleaning")
     private String typeCleaning;
+    @XmlElement(name = "squareMeters")
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal squareMeters;
-    private LocalDateTime dateTimeCleaning;
 
-    public Cleaning(String name, String place, String typeCleaning, BigDecimal squareMeters, LocalDateTime dateTimeCleaning) {
-        super(name, place);
-        this.squareMeters = squareMeters;
-        this.dateTimeCleaning = dateTimeCleaning;
-        this.typeCleaning = typeCleaning;
-    }
+    @XmlElement(name = "dateTimeCleaning")
+    @XmlJavaTypeAdapter(DateTimeAdapter.class)
+    private LocalDateTime dateTimeCleaning;
 
     public String getTypeCleaning() {
         return typeCleaning;
@@ -38,5 +45,14 @@ public class Cleaning extends Service {
 
     public void setDateTimeCleaning(LocalDateTime dateTimeCleaning) {
         this.dateTimeCleaning = dateTimeCleaning;
+    }
+
+    @Override
+    public String toString() {
+        return "Cleaning{" +
+                "typeCleaning='" + typeCleaning + '\'' +
+                ", squareMeters=" + squareMeters +
+                ", dateTimeCleaning=" + dateTimeCleaning +
+                "} " + super.toString();
     }
 }

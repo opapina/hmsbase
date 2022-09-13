@@ -7,11 +7,15 @@
         <house>12</house>
     </address>
     <addresses>
-        <streets>
+        <address>
             <street>Pervomaiskay</street>
+        </address>
+        <address>
             <street>Zaharova</street>
+        </address>
+        <address>
             <street>Pulihova</street>
-        </streets>
+        </address>
     </addresses>
     <services>
         <cleaning name="Cleaning" place="street">
@@ -20,20 +24,20 @@
             <dateTimeCleaning>2022-09-03T11:30:00</dateTimeCleaning>
         </cleaning>
         <cleaning name="Cleaning" place="apartment">
-            <type>wet</type>
+            <typeCleaning>wet</typeCleaning>
             <squareMeters>30</squareMeters>
             <dateTimeCleaning>2022-10-01T13:20:00</dateTimeCleaning>
         </cleaning>
-        <garbageRemoval name="GarbageRemoval" place="street">
+        <garbage-removal name="GarbageRemoval" place="street">
             <garbageType>Plastic</garbageType>
             <quantity>30.99</quantity>
             <dateRemoval>2022-08-08</dateRemoval>
-        </garbageRemoval>
-        <garbageRemoval name="GarbageRemoval" place="house">
+        </garbage-removal>
+        <garbage-removal name="GarbageRemoval" place="house">
             <garbageType>Food waster</garbageType>
             <quantity>10.23</quantity>
             <dateRemoval>2022-09-08</dateRemoval>
-        </garbageRemoval>
+        </garbage-removal>
     </services>
     <orders>
         <order>
@@ -97,14 +101,15 @@
                 </apartment>
             </apartments>
             <vehicles>
-                <vehicle type="car">
+                <car>
                     <model>Polo</model>
                     <brand>Volkswagen</brand>
-                </vehicle>
-                <vehicle type="bicycle">
-                    <model>adult-17</model>
+                </car>
+                <bicycle>
+                    <model>child-17</model>
                     <brand>Aist</brand>
-                </vehicle>
+                    <wheelsCount>3</wheelsCount>
+                </bicycle>
             </vehicles>
         </client>
         <client>
@@ -127,11 +132,13 @@
                     <firstName>Ivan</firstName>
                     <lastName>Petrov</lastName>
                     <dob>2013-09-02</dob>
+                    <infantAge>9</infantAge>
                 </child>
                 <child>
                     <firstName>Vova</firstName>
                     <lastName>Petrov</lastName>
                     <dob>2016-06-21</dob>
+                    <infantAge>7</infantAge>
                 </child>
             </children>
         </client>
@@ -157,22 +164,24 @@
                 <flat>4</flat>
             </address>
             <vehicles>
-                <vehicle type="car">
+                <car>
                     <model>3</model>
                     <brand>bmw</brand>
-                </vehicle>
-                <vehicle type="bicycle">
+                    <engine>123456</engine>
+                </car>
+                <bicycle>
                     <model>adult-25</model>
                     <brand>Fitness</brand>
-                </vehicle>
+                    <wheelsCount>2</wheelsCount>
+                </bicycle>
             </vehicles>
         </worker>
         <worker>
-            <firstName>Kolya</firstName>
-            <lastName>Titov</lastName>
+            <firstName>Vasya</firstName>
+            <lastName>Zotov</lastName>
             <dob>1980-03-15</dob>
             <profession>piper</profession>
-            <experience>8</experience>
+            <experience>3</experience>
         </worker>
         <worker>
             <firstName>Katya</firstName>
@@ -185,12 +194,13 @@
                     <firstName>Kolya</firstName>
                     <lastName>Mashkin</lastName>
                     <dob>2014-05-25</dob>
-                    <age>8</age>
+                    <infantAge>8</infantAge>
                 </child>
                 <child>
                     <firstName>Nadya</firstName>
                     <lastName>Mashkina</lastName>
                     <dob>2008-01-05</dob>
+                    <infantAge>14</infantAge>
                 </child>
                 <child>
                     <firstName>Ira</firstName>
