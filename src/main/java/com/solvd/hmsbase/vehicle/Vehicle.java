@@ -5,7 +5,7 @@ import com.solvd.hmsbase.service.GarbageRemoval;
 
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "vehicle")
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({Bicycle.class, Car.class})
 public class Vehicle {

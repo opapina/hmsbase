@@ -1,6 +1,8 @@
 package com.solvd.hmsbase.resource;
 
 import com.solvd.hmsbase.base.*;
+import com.solvd.hmsbase.vehicle.Bicycle;
+import com.solvd.hmsbase.vehicle.Car;
 import com.solvd.hmsbase.vehicle.Vehicle;
 
 import javax.xml.bind.annotation.*;
@@ -23,7 +25,8 @@ public class Worker extends Human {
     @XmlElement
     private Address address;
     @XmlElementWrapper
-    @XmlElements(@XmlElement(name = "vehicle", type = Vehicle.class))
+    @XmlElements({@XmlElement(name = "car", type = Car.class),
+            @XmlElement(name = "bicycle", type = Bicycle.class)})
     private List<String> vehicles;
     @XmlElementWrapper
     @XmlElements(@XmlElement(name = "child", type = Child.class))
