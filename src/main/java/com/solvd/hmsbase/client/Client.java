@@ -1,6 +1,8 @@
 package com.solvd.hmsbase.client;
 
 import com.solvd.hmsbase.base.*;
+import com.solvd.hmsbase.vehicle.Bicycle;
+import com.solvd.hmsbase.vehicle.Car;
 import com.solvd.hmsbase.vehicle.Vehicle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +20,8 @@ public class Client<A, V> extends Human {
     @XmlElements(@XmlElement(name = "apartment", type = Apartment.class))
     private List<A> apartments;
     @XmlElementWrapper
-    @XmlElements(@XmlElement(name = "vehicle", type = Vehicle.class))
+    @XmlElements({@XmlElement(name = "car", type = Car.class),
+            @XmlElement(name = "bicycle", type = Bicycle.class)})
     private List<V> vehicles;
     @XmlElementWrapper
     @XmlElements(@XmlElement(name = "child", type = Child.class))

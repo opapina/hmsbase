@@ -20,7 +20,7 @@ public class Cleaning extends Service {
     private BigDecimal squareMeters;
 
     @XmlElement(name = "dateTimeCleaning")
-//    @XmlJavaTypeAdapter(DateTimeAdapter.class)
+    @XmlJavaTypeAdapter(DateTimeAdapter.class)
     private LocalDateTime dateTimeCleaning;
 
     public String getTypeCleaning() {
