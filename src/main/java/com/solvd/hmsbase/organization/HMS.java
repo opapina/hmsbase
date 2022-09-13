@@ -1,8 +1,11 @@
 package com.solvd.hmsbase.organization;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
 import com.solvd.hmsbase.base.Address;
 import com.solvd.hmsbase.client.Client;
 import com.solvd.hmsbase.order.Order;
+import com.solvd.hmsbase.service.Cleaning;
+import com.solvd.hmsbase.service.GarbageRemoval;
 import com.solvd.hmsbase.vehicle.Car;
 import com.solvd.hmsbase.resource.Worker;
 import com.solvd.hmsbase.service.Service;
@@ -23,8 +26,10 @@ public class HMS {
     @XmlElement(name = "address")
     private Address address;
 
-    @XmlElementWrapper(name = "services")
-    @XmlElements(@XmlElement(name = "service", type = Service.class))
+    @XmlElementWrapper
+    @XmlElements({
+            @XmlElement(name = "cleaning", type = Cleaning.class),
+            @XmlElement(name = "garbage-removal", type = GarbageRemoval.class)})
     private List<Service> services;
 
     @XmlElementWrapper(name = "orders")

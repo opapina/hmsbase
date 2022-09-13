@@ -16,44 +16,40 @@
       "street": "Pulihova"
     }
   ],
-  "services": [
-    {
-      "cleaning": {
-        "@name": "Cleaning",
-        "@place": "street",
+  "services": {
+    "cleaning": [
+      {
+        "name": "Cleaning",
+        "place": "street",
         "typeCleaning": "dry",
         "squareMeters": "50.77",
         "dateTimeCleaning": "2022-09-03T11:30:00"
-      }
-    },
-    {
-      "cleaning": {
-        "@name": "Cleaning",
-        "@place": "apartment",
+      },
+      {
+        "name": "Cleaning",
+        "place": "apartment",
         "typeCleaning": "wet",
         "squareMeters": "30",
         "dateTimeCleaning": "2022-10-01T13:20:00"
       }
-    },
-    {
-      "garbageRemoval": {
-        "@name": "GarbageRemoval",
-        "@place": "street",
+    ],
+    "garbage-removal": [
+      {
+        "name": "GarbageRemoval",
+        "place": "street",
         "garbageType": "Plastic",
         "quantity": "30.99",
         "dateRemoval": "2022-08-08"
-      }
-    },
-    {
-      "garbageRemoval": {
-        "@name": "GarbageRemoval",
-        "@place": "house",
+      },
+      {
+        "name": "GarbageRemoval",
+        "place": "house",
         "garbageType": "Food waster",
         "quantity": "10.23",
         "dateRemoval": "2022-09-08"
       }
-    }
-  ],
+    ]
+  },
   "orders": [
     {
       "id": "1",
@@ -115,21 +111,17 @@
           }
         }
       },
-      "vehicles": [
-        {
-          "car": {
-            "model": "Polo",
-            "brand": "Volkswagen"
-          }
+      "vehicles": {
+        "car": {
+          "model": "Polo",
+          "brand": "Volkswagen"
         },
-        {
-          "bicycle": {
-            "model": "child-17",
-            "brand": "Aist",
-            "wheelsCount": "3"
-          }
+        "bicycle": {
+          "model": "child-17",
+          "brand": "Aist",
+          "wheelsCount": "3"
         }
-      ]
+      }
     },
     {
       "firstName": "Lubov",
@@ -182,22 +174,18 @@
         "house": "21",
         "flat": "4"
       },
-      "vehicles": [
-        {
-          "car": {
-            "model": "3",
-            "brand": "bmw",
-            "engine": "123456"
-          }
+      "vehicles": {
+        "car": {
+          "model": "3",
+          "brand": "bmw",
+          "engine": "123456"
         },
-        {
-          "bicycle": {
-            "model": "adult-25",
-            "brand": "Fitness",
-            "wheelsCount": "2"
-          }
+        "bicycle": {
+          "model": "adult-25",
+          "brand": "Fitness",
+          "wheelsCount": "2"
         }
-      ]
+      }
     },
     {
       "firstName": "Vasya",

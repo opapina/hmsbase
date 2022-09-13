@@ -37,74 +37,68 @@
         <xs:element name="services">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="service" maxOccurs="unbounded" minOccurs="0">
+              <xs:element name="cleaning" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="cleaning" minOccurs="0">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="typeCleaning">
-                            <xs:simpleType>
-                              <xs:restriction base="xs:string">
-                                <xs:enumeration value="dry"/>
-                                <xs:enumeration value="wet"/>
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                          <xs:element name="squareMeters">
-                            <xs:simpleType>
-                              <xs:restriction base="xs:float">
-                                <xs:enumeration value="50.77"/>
-                                <xs:enumeration value="30"/>
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                          <xs:element name="dateTimeCleaning">
-                            <xs:simpleType>
-                              <xs:restriction base="xs:dateTime">
-                                <xs:enumeration value="2022-09-03T11:30:00"/>
-                                <xs:enumeration value="2022-10-01T13:20:00"/>
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                        </xs:sequence>
-                        <xs:attribute type="xs:string" name="name" use="optional"/>
-                        <xs:attribute type="xs:string" name="place" use="optional"/>
-                      </xs:complexType>
+                    <xs:element name="typeCleaning">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="dry"/>
+                          <xs:enumeration value="wet"/>
+                        </xs:restriction>
+                      </xs:simpleType>
                     </xs:element>
-                    <xs:element name="garbageRemoval" minOccurs="0">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="garbageType">
-                            <xs:simpleType>
-                              <xs:restriction base="xs:string">
-                                <xs:enumeration value="Plastic"/>
-                                <xs:enumeration value="Food waster"/>
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                          <xs:element name="quantity">
-                            <xs:simpleType>
-                              <xs:restriction base="xs:float">
-                                <xs:enumeration value="30.99"/>
-                                <xs:enumeration value="10.23"/>
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                          <xs:element name="dateRemoval">
-                            <xs:simpleType>
-                              <xs:restriction base="xs:date">
-                                <xs:enumeration value="2022-08-08"/>
-                                <xs:enumeration value="2022-09-08"/>
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                        </xs:sequence>
-                        <xs:attribute type="xs:string" name="name" use="optional"/>
-                        <xs:attribute type="xs:string" name="place" use="optional"/>
-                      </xs:complexType>
+                    <xs:element name="squareMeters">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:float">
+                          <xs:enumeration value="50.77"/>
+                          <xs:enumeration value="30"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="dateTimeCleaning">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:dateTime">
+                          <xs:enumeration value="2022-09-03T11:30:00"/>
+                          <xs:enumeration value="2022-10-01T13:20:00"/>
+                        </xs:restriction>
+                      </xs:simpleType>
                     </xs:element>
                   </xs:sequence>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                  <xs:attribute type="xs:string" name="place" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="garbage-removal" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="garbageType">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Plastic"/>
+                          <xs:enumeration value="Food waster"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="quantity">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:float">
+                          <xs:enumeration value="30.99"/>
+                          <xs:enumeration value="10.23"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="dateRemoval">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:date">
+                          <xs:enumeration value="2022-08-08"/>
+                          <xs:enumeration value="2022-09-08"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                  <xs:attribute type="xs:string" name="place" use="optional"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
@@ -271,26 +265,20 @@
                     <xs:element name="vehicles" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="vehicle" maxOccurs="unbounded" minOccurs="0">
+                          <xs:element name="car">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="car" minOccurs="0">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element type="xs:string" name="model"/>
-                                      <xs:element type="xs:string" name="brand"/>
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:element name="bicycle" minOccurs="0">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element type="xs:string" name="model"/>
-                                      <xs:element type="xs:string" name="brand"/>
-                                      <xs:element type="xs:byte" name="wheelsCount"/>
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
+                                <xs:element type="xs:string" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="bicycle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
+                                <xs:element type="xs:byte" name="wheelsCount"/>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
@@ -408,27 +396,21 @@
                     <xs:element name="vehicles" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="vehicle" maxOccurs="unbounded" minOccurs="0">
+                          <xs:element name="car">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="car" minOccurs="0">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element type="xs:byte" name="model"/>
-                                      <xs:element type="xs:string" name="brand"/>
-                                      <xs:element type="xs:int" name="engine"/>
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:element name="bicycle" minOccurs="0">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element type="xs:string" name="model"/>
-                                      <xs:element type="xs:string" name="brand"/>
-                                      <xs:element type="xs:byte" name="wheelsCount"/>
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
+                                <xs:element type="xs:byte" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
+                                <xs:element type="xs:int" name="engine"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="bicycle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="model"/>
+                                <xs:element type="xs:string" name="brand"/>
+                                <xs:element type="xs:byte" name="wheelsCount"/>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>

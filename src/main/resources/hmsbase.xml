@@ -18,34 +18,26 @@
         </address>
     </addresses>
     <services>
-        <service>
-            <cleaning name="Cleaning" place="street">
-                <typeCleaning>dry</typeCleaning>
-                <squareMeters>50.77</squareMeters>
-                <dateTimeCleaning>2022-09-03T11:30:00</dateTimeCleaning>
-            </cleaning>
-        </service>
-        <service>
-            <cleaning name="Cleaning" place="apartment">
-                <typeCleaning>wet</typeCleaning>
-                <squareMeters>30</squareMeters>
-                <dateTimeCleaning>2022-10-01T13:20:00</dateTimeCleaning>
-            </cleaning>
-        </service>
-        <service>
-            <garbageRemoval name="GarbageRemoval" place="street">
-                <garbageType>Plastic</garbageType>
-                <quantity>30.99</quantity>
-                <dateRemoval>2022-08-08</dateRemoval>
-            </garbageRemoval>
-        </service>
-        <service>
-            <garbageRemoval name="GarbageRemoval" place="house">
-                <garbageType>Food waster</garbageType>
-                <quantity>10.23</quantity>
-                <dateRemoval>2022-09-08</dateRemoval>
-            </garbageRemoval>
-        </service>
+        <cleaning name="Cleaning" place="street">
+            <typeCleaning>dry</typeCleaning>
+            <squareMeters>50.77</squareMeters>
+            <dateTimeCleaning>2022-09-03T11:30:00</dateTimeCleaning>
+        </cleaning>
+        <cleaning name="Cleaning" place="apartment">
+            <typeCleaning>wet</typeCleaning>
+            <squareMeters>30</squareMeters>
+            <dateTimeCleaning>2022-10-01T13:20:00</dateTimeCleaning>
+        </cleaning>
+        <garbage-removal name="GarbageRemoval" place="street">
+            <garbageType>Plastic</garbageType>
+            <quantity>30.99</quantity>
+            <dateRemoval>2022-08-08</dateRemoval>
+        </garbage-removal>
+        <garbage-removal name="GarbageRemoval" place="house">
+            <garbageType>Food waster</garbageType>
+            <quantity>10.23</quantity>
+            <dateRemoval>2022-09-08</dateRemoval>
+        </garbage-removal>
     </services>
     <orders>
         <order>
@@ -109,19 +101,15 @@
                 </apartment>
             </apartments>
             <vehicles>
-                <vehicle>
-                    <car>
-                        <model>Polo</model>
-                        <brand>Volkswagen</brand>
-                    </car>
-                </vehicle>
-                <vehicle>
-                    <bicycle>
-                        <model>child-17</model>
-                        <brand>Aist</brand>
-                        <wheelsCount>3</wheelsCount>
-                    </bicycle>
-                </vehicle>
+                <car>
+                    <model>Polo</model>
+                    <brand>Volkswagen</brand>
+                </car>
+                <bicycle>
+                    <model>child-17</model>
+                    <brand>Aist</brand>
+                    <wheelsCount>3</wheelsCount>
+                </bicycle>
             </vehicles>
         </client>
         <client>
@@ -176,20 +164,16 @@
                 <flat>4</flat>
             </address>
             <vehicles>
-                <vehicle>
-                    <car>
-                        <model>3</model>
-                        <brand>bmw</brand>
-                        <engine>123456</engine>
-                    </car>
-                </vehicle>
-                <vehicle>
-                    <bicycle>
-                        <model>adult-25</model>
-                        <brand>Fitness</brand>
-                        <wheelsCount>2</wheelsCount>
-                    </bicycle>
-                </vehicle>
+                <car>
+                    <model>3</model>
+                    <brand>bmw</brand>
+                    <engine>123456</engine>
+                </car>
+                <bicycle>
+                    <model>adult-25</model>
+                    <brand>Fitness</brand>
+                    <wheelsCount>2</wheelsCount>
+                </bicycle>
             </vehicles>
         </worker>
         <worker>

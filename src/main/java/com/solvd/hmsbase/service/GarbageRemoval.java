@@ -1,8 +1,8 @@
 package com.solvd.hmsbase.service;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.solvd.hmsbase.base.BigDecimalAdapter;
 import com.solvd.hmsbase.base.DateAdapter;
-import com.solvd.hmsbase.base.DateTimeAdapter;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -11,6 +11,7 @@ import java.time.LocalDate;
 
 @XmlRootElement(name = "garbageRemoval")
 @XmlAccessorType(XmlAccessType.FIELD)
+@JsonAutoDetect(creatorVisibility = JsonAutoDetect.Visibility.PROTECTED_AND_PUBLIC)
 public class GarbageRemoval extends Service {
 
     @XmlElement
@@ -20,8 +21,15 @@ public class GarbageRemoval extends Service {
     private BigDecimal quantity;
 
     @XmlElement
-    @XmlJavaTypeAdapter(DateTimeAdapter.class)
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private LocalDate dateRemoval;
+
+    public GarbageRemoval() {
+    }
+
+    public GarbageRemoval(String name, String place) {
+        super(name, place);
+    }
 
     public BigDecimal getQuantity() {
         return quantity;

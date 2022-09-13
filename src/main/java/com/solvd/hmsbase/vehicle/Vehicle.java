@@ -2,9 +2,11 @@ package com.solvd.hmsbase.vehicle;
 
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "vehicle")
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlSeeAlso({Bicycle.class, Car.class})
 public class Vehicle {
+
     @XmlElement
     private String model;
     @XmlElement
