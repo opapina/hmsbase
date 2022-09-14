@@ -1,5 +1,5 @@
 package com.solvd.hmsbase.client;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.solvd.hmsbase.base.*;
 import com.solvd.hmsbase.vehicle.Vehicle;
 import org.apache.logging.log4j.LogManager;
@@ -10,33 +10,37 @@ import java.util.List;
 
 @XmlRootElement(name = "client")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Client<A, V> extends Human {
+public class Client extends Human {
 
     private static final Logger LOGGER = LogManager.getLogger(Client.class);
 
     @XmlElementWrapper
     @XmlElements(@XmlElement(name = "apartment", type = Apartment.class))
-    private List<A> apartments;
+    @JsonProperty("apartments")
+    private List<Apartment> apartments;
     @XmlElementWrapper
     @XmlElements(@XmlElement(name = "vehicle", type = Vehicle.class))
-    private List<V> vehicles;
+    @JsonProperty("vehicles")
+    private List<Vehicle> vehicles;
     @XmlElementWrapper
     @XmlElements(@XmlElement(name = "child", type = Child.class))
     private List<Child> children;
 
-    public List<A> getApartment() {
+
+
+    public List<Apartment> getApartment() {
         return apartments;
     }
 
-    public void setApartment(List<A> apartment) {
+    public void setApartment(List<Apartment> apartment) {
         this.apartments = apartment;
     }
 
-    public List<V> getVehicle() {
+    public List<Vehicle> getVehicle() {
         return vehicles;
     }
 
-    public void setVehicle(List<V> vehicle) {
+    public void setVehicle(List<Vehicle> vehicle) {
         this.vehicles = vehicle;
     }
 

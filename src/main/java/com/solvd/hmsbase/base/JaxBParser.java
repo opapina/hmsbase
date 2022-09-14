@@ -1,5 +1,8 @@
 package com.solvd.hmsbase.base;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.solvd.hmsbase.organization.HMS;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,5 +27,15 @@ public class JaxBParser implements IParse {
             throw new RuntimeException(e);
         }
         LOGGER.info(hms.toString());
+//
+//        try {
+//            String json = new ObjectMapper().writeValueAsString(hms.toString());
+//
+//            LOGGER.info(json);
+//        } catch (JsonProcessingException e) {
+//            throw new RuntimeException(e);
+//        }
+
+
     }
 }

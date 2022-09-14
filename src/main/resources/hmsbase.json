@@ -16,40 +16,6 @@
       "street": "Pulihova"
     }
   ],
-  "services": {
-    "cleaning": [
-      {
-        "name": "Cleaning",
-        "place": "street",
-        "typeCleaning": "dry",
-        "squareMeters": "50.77",
-        "dateTimeCleaning": "2022-09-03T11:30:00"
-      },
-      {
-        "name": "Cleaning",
-        "place": "apartment",
-        "typeCleaning": "wet",
-        "squareMeters": "30",
-        "dateTimeCleaning": "2022-10-01T13:20:00"
-      }
-    ],
-    "garbage-removal": [
-      {
-        "name": "GarbageRemoval",
-        "place": "street",
-        "garbageType": "Plastic",
-        "quantity": "30.99",
-        "dateRemoval": "2022-08-08"
-      },
-      {
-        "name": "GarbageRemoval",
-        "place": "house",
-        "garbageType": "Food waster",
-        "quantity": "10.23",
-        "dateRemoval": "2022-09-08"
-      }
-    ]
-  },
   "orders": [
     {
       "id": "1",
@@ -70,7 +36,7 @@
       }
     }
   ],
-  "clients": [
+    "clients": [
     {
       "firstName": "Vasya",
       "lastName": "Ivanov",
@@ -100,8 +66,8 @@
       "firstName": "Yulya",
       "lastName": "Znanina",
       "dob": "1995-06-08",
-      "apartments": {
-        "apartment": {
+      "apartments": [
+        {
           "room": "3",
           "square": "88.25",
           "address": {
@@ -110,25 +76,25 @@
             "flat": "38"
           }
         }
-      },
-      "vehicles": {
-        "car": {
+        ],
+      "vehicles": [
+        {
           "model": "Polo",
           "brand": "Volkswagen"
         },
-        "bicycle": {
+        {
           "model": "child-17",
           "brand": "Aist",
           "wheelsCount": "3"
         }
-      }
+      ]
     },
     {
       "firstName": "Lubov",
       "lastName": "Petrova",
       "dob": "1990-01-09",
-      "apartments": {
-        "apartment": {
+      "apartments": [
+        {
           "room": "1",
           "square": "50.30",
           "address": {
@@ -137,7 +103,7 @@
             "flat": "90"
           }
         }
-      },
+      ],
       "children": [
         {
           "firstName": "Ivan",
@@ -174,18 +140,17 @@
         "house": "21",
         "flat": "4"
       },
-      "vehicles": {
-        "car": {
+      "vehicles": [
+        {
           "model": "3",
-          "brand": "bmw",
-          "engine": "123456"
+          "brand": "bmw"
         },
-        "bicycle": {
+        {
           "model": "adult-25",
           "brand": "Fitness",
           "wheelsCount": "2"
         }
-      }
+      ]
     },
     {
       "firstName": "Vasya",
@@ -197,7 +162,7 @@
     {
       "firstName": "Katya",
       "lastName": "Mashkina",
-      "dob": "1997-31-12",
+      "dob": "1997-12-31",
       "profession": "cleaner",
       "experience": "5",
       "children": [

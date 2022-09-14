@@ -1,7 +1,11 @@
 package com.solvd.hmsbase.organization;
 
 import com.fasterxml.jackson.annotation.JacksonInject;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.solvd.hmsbase.base.Address;
+import com.solvd.hmsbase.base.Apartment;
 import com.solvd.hmsbase.client.Client;
 import com.solvd.hmsbase.order.Order;
 import com.solvd.hmsbase.service.Cleaning;
@@ -30,6 +34,7 @@ public class HMS {
     @XmlElements({
             @XmlElement(name = "cleaning", type = Cleaning.class),
             @XmlElement(name = "garbage-removal", type = GarbageRemoval.class)})
+    @JsonProperty("services")
     private List<Service> services;
 
     @XmlElementWrapper(name = "orders")
@@ -42,11 +47,13 @@ public class HMS {
 
     @XmlElementWrapper(name = "workers")
     @XmlElements(@XmlElement(name = "worker", type = Worker.class))
+    @JsonProperty("workers")
     private List<Worker> workers;
 
     @XmlElementWrapper(name = "clients")
     @XmlElements(@XmlElement(name = "client", type = Client.class))
-    private List<Client<Address, Car>> clients;
+    @JsonProperty("clients")
+    private List<Client> clients;
 
     public String getName() {
         return name;
@@ -103,11 +110,11 @@ public class HMS {
         this.orders = orders;
     }
 
-    public List<Client<Address, Car>> getClient() {
+    public List<Client> getClient() {
         return clients;
     }
 
-    public void setClient(List<Client<Address, Car>> clients) {
+    public void setClient(List<Client> clients) {
         this.clients = clients;
     }
 
