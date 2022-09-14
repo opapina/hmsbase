@@ -27,5 +27,15 @@ public class JaxBParser implements IParse {
             throw new RuntimeException(e);
         }
         LOGGER.info(hms.toString());
+//
+//        try {
+//            String json = new ObjectMapper().writeValueAsString(hms.toString());
+//
+//            LOGGER.info(json);
+//        } catch (JsonProcessingException e) {
+//            throw new RuntimeException(e);
+//        }
+
+
     }
 }
