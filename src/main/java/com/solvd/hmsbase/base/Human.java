@@ -1,5 +1,7 @@
 package com.solvd.hmsbase.base;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -14,6 +16,7 @@ public class Human {
 
     @XmlElement
     @XmlJavaTypeAdapter(DateAdapter.class)
+    @JsonDeserialize(using = CustomDateDeserializer.class)
     private LocalDate dob;
 
     public String getFirstName() {
@@ -27,6 +30,8 @@ public class Human {
     public LocalDate getDob() {
         return dob;
     }
+
+
 
     @Override
     public String toString() {
