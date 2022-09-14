@@ -1,5 +1,7 @@
 package com.solvd.hmsbase.resource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.solvd.hmsbase.base.*;
 import com.solvd.hmsbase.vehicle.Bicycle;
 import com.solvd.hmsbase.vehicle.Car;
@@ -20,14 +22,17 @@ public class Worker extends Human {
     private Integer experience;
     @XmlElement
     @XmlJavaTypeAdapter(BigDecimalAdapter.class)
+    @JsonProperty("salary")
     private BigDecimal salaryPerMonth;
 
     @XmlElement
     private Address address;
     @XmlElementWrapper
-    @XmlElements({@XmlElement(name = "car", type = Car.class),
-            @XmlElement(name = "bicycle", type = Bicycle.class)})
-    private List<String> vehicles;
+
+    @XmlElements(@XmlElement(name = "vehicle", type = Vehicle.class))
+    @JsonProperty("vehicles")
+    private List<Vehicle> vehicles;
+
     @XmlElementWrapper
     @XmlElements(@XmlElement(name = "child", type = Child.class))
     private List<Child> children;
@@ -64,11 +69,11 @@ public class Worker extends Human {
         this.address = address;
     }
 
-    public List<String> getVehicles() {
+    public List<Vehicle> getVehicles() {
         return vehicles;
     }
 
-    public void setVehicles(List<String> vehicles) {
+    public void setVehicles(List<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }
 

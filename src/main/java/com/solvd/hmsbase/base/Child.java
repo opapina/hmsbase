@@ -1,5 +1,7 @@
 package com.solvd.hmsbase.base;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "child")

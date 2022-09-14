@@ -1,4 +1,4 @@
-package com.solvd.hmsbase.service;
+package com.solvd.hmsbase.service;;
 
 import javax.xml.bind.annotation.*;
 
@@ -7,18 +7,18 @@ import javax.xml.bind.annotation.*;
 @XmlSeeAlso({Cleaning.class, GarbageRemoval.class})
 public class Service {
 
-   @XmlAttribute
+    @XmlAttribute
     public String name;
 
-   @XmlAttribute
+    @XmlAttribute
     public String place;
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
+    public String getPlace() {
+        return place;
     }
 
     @Override

@@ -1,7 +1,10 @@
 package com.solvd.hmsbase.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.solvd.hmsbase.base.BigDecimalAdapter;
-import com.solvd.hmsbase.base.DateAdapter;
+import com.solvd.hmsbase.base.CustomDateDeserializer;
 import com.solvd.hmsbase.base.DateTimeAdapter;
 
 import javax.xml.bind.annotation.*;
@@ -14,6 +17,8 @@ import java.time.LocalDateTime;
 public class Cleaning extends Service {
 
     @XmlElement(name = "typeCleaning")
+//    @JsonProperty("type")
+    @JsonIgnore
     private String typeCleaning;
     @XmlElement(name = "squareMeters")
     @XmlJavaTypeAdapter(BigDecimalAdapter.class)
@@ -21,6 +26,7 @@ public class Cleaning extends Service {
 
     @XmlElement(name = "dateTimeCleaning")
     @XmlJavaTypeAdapter(DateTimeAdapter.class)
+    @JsonDeserialize(using = CustomDateDeserializer.class)
     private LocalDateTime dateTimeCleaning;
 
     public String getTypeCleaning() {
