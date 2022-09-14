@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlSeeAlso({Cleaning.class, GarbageRemoval.class})
 public class Service {
 
     @XmlAttribute

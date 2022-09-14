@@ -1,6 +1,8 @@
 package com.solvd.hmsbase.client;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.solvd.hmsbase.base.*;
+import com.solvd.hmsbase.vehicle.Bicycle;
+import com.solvd.hmsbase.vehicle.Car;
 import com.solvd.hmsbase.vehicle.Vehicle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,5 +1,8 @@
 package com.solvd.hmsbase.vehicle;
 
+import com.solvd.hmsbase.service.Cleaning;
+import com.solvd.hmsbase.service.GarbageRemoval;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
